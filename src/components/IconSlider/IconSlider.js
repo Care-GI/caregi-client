@@ -31,7 +31,7 @@ const IconSlider = () => {
   return (
     <>
       <ContainerIconSlide onClick={() => alert("bajando la vista")}>
-        <i class="fas  fa-angle-double-up fa-3x"></i>
+        <i className="fas  fa-angle-double-up fa-3x"></i>
         <p>mas info.</p>
       </ContainerIconSlide>
     </>

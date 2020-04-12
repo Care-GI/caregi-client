@@ -29,7 +29,7 @@ const IconQuestionContainer = styled.div`
   }
 `;
 
-const StepOne = ({ setStep }) => {
+const StepOne = ({ nextStep }) => {
   //state
   const [idPharm, setIdPharm] = useState("");
   const [error, setError] = useState(false);
@@ -39,8 +39,6 @@ const StepOne = ({ setStep }) => {
 
   // Context
   const { setDataRegister, dataRegister } = useContext(FormRegisterContext);
-
-  console.log(dataRegister);
 
   // handleChange
   const handleChange = (e) => {
@@ -64,13 +62,13 @@ const StepOne = ({ setStep }) => {
       ...{
         adressInformation: {
           ...dataRegister.adressInformation,
-          idPharm,
+          IdPharm: idPharm,
         },
       },
     });
 
     // nextStep
-    setStep(2);
+    nextStep();
   };
 
   return (
@@ -99,22 +97,23 @@ const StepOne = ({ setStep }) => {
         <div className="row">
           <div className="col-12">
             <Tittle color="#fff">Checa Disponibilidad en tu zona</Tittle>
-            <p
-              style={{
-                textAlign: "center",
-                fontFamily: Fonts.Body,
-                color: "#fff",
+
+            <IconQuestionContainer
+              onClick={() => {
+                setOpen(true);
               }}
             >
-              <IconQuestionContainer
-                onClick={() => {
-                  setOpen(true);
+              <p
+                style={{
+                  textAlign: "center",
+                  fontFamily: Fonts.Body,
+                  color: "#fff",
                 }}
               >
                 No encontraste tu localidad {""}
-                <i class="fas fa-question-circle fa-2x" />
-              </IconQuestionContainer>
-            </p>
+                <i className="fas fa-question-circle fa-2x" />
+              </p>
+            </IconQuestionContainer>
           </div>
           <div className="col-lg-4 col-md-4 col-sm-4 m-auto">
             {error ? (
@@ -125,7 +124,7 @@ const StepOne = ({ setStep }) => {
             <form className="form-group p-4" onSubmit={handleSubmit}>
               <select
                 className="form-control"
-                style={{ fontFamily: Fonts.Body }}
+                style={{ fontFamily: Fonts.Body, borderRadius: "2rem" }}
                 name="idPharm"
                 onChange={handleChange}
                 value={idPharm}

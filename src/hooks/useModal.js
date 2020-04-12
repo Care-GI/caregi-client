@@ -37,7 +37,7 @@ const useModal = (init) => {
       >
         <IconClose>
           <i
-            class="fas fa-times-circle fa-2x"
+            className="fas fa-times-circle fa-2x"
             color="red"
             onClick={() => setOpen(false)}
           ></i>

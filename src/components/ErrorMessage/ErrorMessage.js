@@ -6,6 +6,10 @@ const MessageContainer = styled.div`
   /* ... */
   text-align: center;
   font-family: ${Fonts.Title};
+  position: fixed;
+  top: 10%;
+  right: 0;
+  z-index: 2;
 `;
 
 const ErrorMessage = ({ children }) => (

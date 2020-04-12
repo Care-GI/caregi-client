@@ -10,6 +10,7 @@ const Tittle = ({ children, color, size }) => {
     font-size: ${size};
     margin-bottom: 2rem;
     text-align: center;
+    font-weight: bold;
   `;
 
   return <TitleText>{children}</TitleText>;

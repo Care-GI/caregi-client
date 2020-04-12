@@ -31,7 +31,7 @@ const BulbIconAnim = styled.div`
 
 const IconBulb = () => (
   <BulbIconAnim>
-    <i class="fas fa-lightbulb fa-5x"></i>
+    <i className="fas fa-lightbulb fa-5x"></i>
   </BulbIconAnim>
 );
 

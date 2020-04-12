@@ -19,8 +19,7 @@ const FormRegisterProvider = (props) => {
     adressInformation: {
       street: "",
       number: "",
-      private: "",
-      idPharm: "",
+      IdPharm: "",
       references: "",
     },
   });
