@@ -1,209 +1,250 @@
-import Head from 'next/head'
+import React, { useState } from "react";
+import styled from "@emotion/styled";
 
-export default function Home() {
+//Components
+import Screen from "../components/ScreenC/Screen";
+
+// Personal Hooks
+
+//lib
+import { Fonts } from "../constants/Fonts";
+import { Colors } from "../constants/Colors";
+import { dimension } from "../constants/Dimensions";
+import Card from "../components/Card/Card";
+import IconSlider from "../components/IconSlider/IconSlider";
+import Button from "../components/Button/Button";
+import IconBulb from "../components/IconBulb/IconBulb";
+import Tittle from "../components/Tilttle/Tittle";
+import Layout from "../layout/Layout";
+
+// Styled Components
+
+const CardContainer = styled.div`
+  /* ... */
+  text-align: center;
+  font-family: ${Fonts.Title};
+`;
+
+const TitleWelcome = styled.h1`
+  /* ... */
+  margin-top: 1.5rem;
+  color: ${Colors.secondaryDark.rgb};
+  font-size: 3rem;
+
+  span {
+    color: ${Colors.secondaryLigth.hexa};
+    font-size: 3.5rem;
+  }
+`;
+
+const SubtitleWelcome = styled.h2`
+  /* ... */
+  color: ${Colors.secondaryLigth.hexa};
+  font-size: 2rem;
+
+  span {
+    font-size: 2rem;
+    color: ${Colors.secondaryDark.rgb};
+  }
+`;
+
+const ButtonMainContianer = styled.div`
+  /* ... */
+  display: flex;
+  margin: auto;
+  width: 80%;
+  justify-content: space-between;
+  margin-top: 3rem;
+
+  div {
+    width: 40%;
+  }
+
+  @media (max-width: 880px) {
+    width: 100%;
+    flex-direction: column;
+    div {
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+    }
+  }
+`;
+
+const CentralImage = styled.img`
+  /* ... */
+  width: 30rem;
+  display: block;
+  margin: auto;
+  margin-top: 5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    width: 80%;
+    margin-top: 0.5rem;
+  }
+`;
+
+const SlideContainer = styled.div`
+  /* ... */
+  margin-top: 1.5rem;
+  @media (max-width: 428px) {
+    display: none;
+  }
+`;
+
+const TitleHowItWorks = styled.h2`
+  /* ... */
+  font-size: 4rem;
+  font-family: ${Fonts.Title};
+  text-align: center;
+  margin-top: 5rem;
+  color: ${Colors.primary.hexa};
+`;
+
+const TextInfo = styled.h4`
+  /* ... */
+  font-family: ${Fonts.Body};
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  text-align: center;
+`;
+
+const Home = () => {
+  const [messagewelcome, setMessagewelcome] = useState("de calidad");
+
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Layout>
+        {/*   Screen de welcome  */}
+        <Screen color={"white"} image="/images/ImageSmallBackGround.png">
+          <div className="row">
+            <div className="col-lg-8 col-sm-12 p-5">
+              <CardContainer>
+                <Card
+                  color={{
+                    main: "white",
+                    border: Colors.primary.hexa,
+                  }}
+                >
+                  <TitleWelcome>
+                    La App Inteligente que <span>cuida de tu Salud.</span>
+                  </TitleWelcome>
+                  <IconBulb />
+                  <SubtitleWelcome>
+                    Sin necesidad <span>de salir</span>
+                  </SubtitleWelcome>
+                  <ButtonMainContianer>
+                    <div>
+                      <Button
+                        color={{
+                          main: Colors.primary.rgb + ",0.7)",
+                          font: "#fff",
+                          hover: Colors.primary.rgb + ",1)",
+                        }}
+                        toLink="/register"
+                      >
+                        Crea tu Cuenta gratis
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        toLink={"/about"}
+                        color={{
+                          main: Colors.secondaryLigth.hexa,
+                          font: "#fff",
+                          hover: Colors.secondaryDark.rgb,
+                        }}
+                      >
+                        Conocenos mas...
+                      </Button>
+                    </div>
+                  </ButtonMainContianer>
+                </Card>
+              </CardContainer>
+            </div>
+            <div className="col-md-4">
+              <CentralImage
+                src="/svg/undraw_medical_care_movn.svg"
+                alt="Central Image Vector"
+              />
+            </div>
+          </div>
+          {/* Coponent Slide */}
+          <SlideContainer>
+            <IconSlider />
+          </SlideContainer>
+        </Screen>
+        {/* Screen de como funciona caregi*/}
+        <Screen color={Colors.secondaryLigth.hexa} extraSize={500}>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <TitleHowItWorks>Como funciona CareGI</TitleHowItWorks>
+              </div>
+            </div>
+          </div>
+          {/* Informacion extra*/}
+          <div className="container mt-5">
+            <div className="row m-auto">
+              <div className="col-lg-6 mt-5">
+                <Tittle size="3rem" color={Colors.primary.hexa}>
+                  Crea una Cuenta
+                </Tittle>
+                <TextInfo>
+                  Crea una cuenta de manera gratuita.
+                  <br /> De esta manera te podemos dar le mejor servicio
+                  personalizado.
+                </TextInfo>
+              </div>
+              <div className="col-lg-6 mt-5">
+                <img
+                  src="../images/Vitacora.PNG"
+                  style={{ display: "block", margin: "auto", width: "40%" }}
+                  alt="Vitacora"
+                />
+              </div>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+              <div className="col-lg-6 mt-5">
+                <Tittle size="3rem" color={Colors.primary.hexa}>
+                  Elige un Doctor Certificado
+                </Tittle>
+                <TextInfo>
+                  Tenemos personal capacitado para darte un primer vistazo.
+                  Consideranos tu medico de confianza y de cabecera.
+                </TextInfo>
+              </div>
+              <div className="col-lg-6 mt-5">
+                <img
+                  src="/images/doctor.svg"
+                  style={{ display: "block", margin: "auto", width: "50%" }}
+                  alt="Doctor Imagen"
+                />
+              </div>
+              <div className="col-lg-6 mt-5">
+                <Tittle size="3rem" color={Colors.primary.hexa}>
+                  Llegamos a tu hogar
+                </Tittle>
+                <TextInfo>
+                  Llevamos las medicinas que necesitas y el mejor servicio
+                  personalizado. <br />
+                  Todo para que te mejores.
+                  <br /> Deja que el app vaya guiando tu progreso.
+                </TextInfo>
+              </div>
+              <div className="col-lg-6 mt-5">
+                <img
+                  src="../images/PastillasMedicina.PNG"
+                  style={{ display: "block", margin: "auto", width: "40%" }}
+                  alt="Pastillas Medicina"
+                />
+              </div>
+            </div>
+          </div>
+        </Screen>
+      </Layout>
+    </>
+  );
+};
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
-}
+export default Home;
