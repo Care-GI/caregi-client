@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setToken,
@@ -14,17 +14,22 @@ const useAuth = () => {
   const { token, statusInformation, userInformation } = useSelector(
     (state) => state.user
   );
+
   const dispatch = useDispatch();
   const router = useRouter();
 
   const Provider = ({ children, history }) => {
+    const [loading, setLoading] = useState(false);
+
     const getStatusAcount = async () => {
       try {
         const axios = axiosClient(token);
+        console.log("haciendo peticion");
         const response = await axios.get(`${proxy}/api/client/validate/status`);
+        console.log(response);
         //! evnetos para definir el estado del usuario y setearlo en redux
         dispatch(setStatusInf(response.data.statusInformation));
-        dispatch(setBasicInfo(response.data.userInformation));
+        dispatch(setBasicInfo(response.data.basicInformation));
         if (!response.data.acountActive) {
           router.push("/app-activate");
           return;
@@ -55,6 +60,7 @@ const useAuth = () => {
       if (token) {
         if (!statusInformation && !userInformation) {
           getStatusAcount();
+          setLoading(false);
         }
       }
     }, []);

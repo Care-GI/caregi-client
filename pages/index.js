@@ -115,7 +115,7 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      <Layout navActive={true}>
         {/*   Screen de welcome  */}
         <Screen color={"white"} image="/images/ImageSmallBackGround.png">
           <div className="row">
