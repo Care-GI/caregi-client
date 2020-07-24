@@ -9,19 +9,20 @@ import { Fonts } from "../constants/Fonts";
 import StepOne from "../components/RegisterSteps/StepOne";
 import StepTwo from "../components/RegisterSteps/StepTwo";
 import StepThree from "../components/RegisterSteps/SetpThree";
-import StepConfim from "../components/RegisterSteps/StepConfirm";
 import Loading from "../components/Loading/Loading";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/actions/appStatusActions";
 import Layout from "../layout/Layout";
+import { useRouter } from "next/router";
 
 const Register = () => {
   // state
   //! manipluador de los pasos
   const [step, setStep] = useState(0);
   const [progress, setProgress] = useState(0);
+  const router = useRouter();
 
   // redux
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ const Register = () => {
   } else if (step === 2) {
     content = <StepThree nextStep={nextStep} />;
   } else if (step === 3) {
-    content = <StepConfim />;
+    router.push("/app/home");
   }
 
   if (loading) {

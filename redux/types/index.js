@@ -7,3 +7,4 @@ export const QUIT_ERROR = "QUIT_ERROR";
 export const SET_TOKEN = "SET_TOKEN";
 export const SET_STATUS_INFO = "SET_STATUS_INFO";
 export const SET_BASIC_INFO = "SET_BASIC_INFO";
+export const SET_ACTIVE_STATUS = "SET_ACTIVE_STATUS";

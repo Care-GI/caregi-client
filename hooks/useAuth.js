@@ -1,77 +1,38 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  setToken,
-  setStatusInf,
-  setBasicInfo,
-} from "../redux/actions/userActions";
-import axiosClient from "../config/axios";
-import { proxy } from "../constants/proxy";
-import Loading from "../components/Loading/Loading";
+import React, { Fragment, useEffect } from "react";
+import { useSelector } from "react-redux";
+import getStatusAcount from "../lib/getStatusAcount";
 import { useRouter } from "next/router";
+import { setLoading } from "../redux/actions/appStatusActions";
+import Loading from "../components/Loading/Loading";
+import { useDispatch } from "react-redux";
 
 const useAuth = () => {
-  const { token, statusInformation, userInformation } = useSelector(
-    (state) => state.user
-  );
-
+  const { userInformation, auth } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const Provider = ({ children, history }) => {
-    const [loading, setLoading] = useState(false);
+  //! funcion de validacion en el servidor
 
-    const getStatusAcount = async () => {
-      try {
-        const axios = axiosClient(token);
-        console.log("haciendo peticion");
-        const response = await axios.get(`${proxy}/api/client/validate/status`);
-        console.log(response);
-        //! evnetos para definir el estado del usuario y setearlo en redux
-        dispatch(setStatusInf(response.data.statusInformation));
-        dispatch(setBasicInfo(response.data.basicInformation));
-        if (!response.data.acountActive) {
-          router.push("/app-activate");
-          return;
-        }
-      } catch (error) {
-        // error el token no es valido
-        localStorage.removeItem("careToken");
-        router.push("/login");
-        console.log(error);
-      }
-    };
-
-    useEffect(() => {
-      // primero al cargar el componente es revisar que exista el token guardado
-      if (!token) {
-        const tokenLocal = localStorage.getItem("careToken");
-        if (!tokenLocal) {
-          // redireccionar al login
-          router.push("/login");
-          return;
-        }
-
-        // setting token to the store
-        dispatch(setToken(tokenLocal));
-      }
-
-      // validar status del usuario solo en caso de que se haya seteado el token
-      if (token) {
-        if (!statusInformation && !userInformation) {
-          getStatusAcount();
-          setLoading(false);
-        }
-      }
-    }, []);
-
-    // cargando componente loading mientras se setea y hace la peticion
-    if (!userInformation || !statusInformation) return <Loading />;
-
-    return <>{children}</>;
+  const validateToken = () => {
+    if (!localStorage.getItem("careToken")) {
+      router.push("/login");
+      return;
+    }
+    if (!auth || !userInformation.name) {
+      //! no esta la informacion del usuario hay que validar token y traerla
+      getStatusAcount(localStorage.getItem("careToken"), router, dispatch);
+    }
   };
 
-  return [token, Provider];
+  const Secure = (props) => {
+    useEffect(() => {
+      validateToken();
+    }, []);
+
+    return <Fragment>{props.children}</Fragment>;
+  };
+
+  return [Secure];
 };
 
 export default useAuth;

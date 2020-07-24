@@ -1,10 +1,16 @@
-import { SET_TOKEN, SET_STATUS_INFO, SET_BASIC_INFO } from "../types";
+import {
+  SET_TOKEN,
+  SET_STATUS_INFO,
+  SET_BASIC_INFO,
+  SET_ACTIVE_STATUS,
+} from "../types";
 
 const initialState = {
   auth: false,
   token: null,
-  statusInformation: null,
-  userInformation: null,
+  active: false,
+  statusInformation: {},
+  userInformation: {},
 };
 
 export default function (state = initialState, action) {
@@ -14,6 +20,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         token: action.payload,
+        auth: true,
       };
     case SET_STATUS_INFO:
       return {
@@ -24,8 +31,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         userInformation: action.payload,
+        auth: true,
       };
-
+    case SET_ACTIVE_STATUS:
+      return {
+        ...state,
+        active: action.payload,
+      };
     default:
       return state;
   }

@@ -48,9 +48,8 @@ const Layout = (props) => {
         />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
       </Helmet>
-      <Header />
+      <Header href="/" />
       {props.navActive && <Nav />}
-      {props.appOn && <NavBarApp />}
       {props.children}
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

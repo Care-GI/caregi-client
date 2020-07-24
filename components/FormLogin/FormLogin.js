@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import { CardPurple } from "../../styled-components/card/card";
 import { Fonts } from "../../constants/Fonts";
 import IconForm from "../../components/IconForm/IconForm";
-import { Link } from "next/link";
 import IconBulb from "../../components/IconBulb/IconBulb";
 import { dimension } from "../../constants/Dimensions";
 import { Colors } from "../../constants/Colors";
@@ -48,7 +47,7 @@ const FormLogin = ({ handleSubmit, handleChange, data }) => {
       <TitleCard>Iniciar Sesion</TitleCard>
       <form className="form-group ml-4 mr-4" onSubmit={handleSubmit}>
         <BulbContainer className="m-auto">
-          <IconBulb />
+          <IconBulb icon="fa-user-circle" />
         </BulbContainer>
         <br />
 
@@ -69,13 +68,15 @@ const FormLogin = ({ handleSubmit, handleChange, data }) => {
           value={data.password}
         />
         <HelpContainer className="m-auto">
-          <a to="/recovery/password" style={{ ...style.link }}>
-            Olvidaste tu Contraseña...
-          </a>
-          <br />
-          <a to="/recovery/username" style={{ ...style.link }}>
-            Olvidaste tu Usuario....
-          </a>
+          <div>
+            <a href="/recovery/email" style={{ ...style.link }}>
+              Olvidaste tu Contraseña...
+            </a>
+            <br />
+            <a href="/recovery/username" style={{ ...style.link }}>
+              Olvidaste tu Usuario....
+            </a>
+          </div>
         </HelpContainer>
         <button className="btn btn-primary btn-block mt-4">Ingresar</button>
       </form>

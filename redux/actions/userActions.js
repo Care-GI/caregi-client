@@ -1,5 +1,10 @@
 // importing the types
-import { SET_TOKEN, SET_STATUS_INFO, SET_BASIC_INFO } from "../types";
+import {
+  SET_TOKEN,
+  SET_STATUS_INFO,
+  SET_BASIC_INFO,
+  SET_ACTIVE_STATUS,
+} from "../types";
 
 // exportable useDispatch functions
 
@@ -21,6 +26,12 @@ export function setBasicInfo(data) {
   };
 }
 
+export function setActiveStatus(data) {
+  return (dispatch) => {
+    dispatch(setActiveStatusEvent(data));
+  };
+}
+
 // const functions for the dispatch events
 const setTokenEvent = (token) => ({
   type: SET_TOKEN,
@@ -34,5 +45,10 @@ const setBasicInfoEvent = (data) => ({
 
 const setStatusInfEvent = (data) => ({
   type: SET_STATUS_INFO,
+  payload: data,
+});
+
+const setActiveStatusEvent = (data) => ({
+  type: SET_ACTIVE_STATUS,
   payload: data,
 });

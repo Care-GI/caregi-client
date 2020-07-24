@@ -11,6 +11,9 @@ import {
   quitError,
 } from "../redux/actions/appStatusActions";
 
+// actions user
+import { setActiveStatus, setToken } from "../redux/actions/userActions";
+
 // componentes
 import { Colors } from "../constants/Colors";
 import FormLogin from "../components/FormLogin/FormLogin";
@@ -40,7 +43,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("careToken")) {
-      router.push("/app-home");
+      router.push("/app/home");
     }
   }, []);
 
@@ -66,6 +69,7 @@ const Login = () => {
     dispatch(quitError());
 
     dispatch(setLoading(true));
+
     try {
       const response = await Axios({
         method: "POST",
@@ -83,9 +87,10 @@ const Login = () => {
       console.log(response);
 
       localStorage.setItem("careToken", response.data.token);
-
+      dispatch(setToken(response.data.token));
+      dispatch(setActiveStatus(response.data.acountActive.state));
       dispatch(setLoading(false, 3000));
-      router.push("/app-home");
+      router.push("/app/home");
     } catch (error) {
       console.log(error);
       dispatch(showError("Ups! Error al iniciar sesion verifique sus datos"));

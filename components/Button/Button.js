@@ -20,8 +20,8 @@ const Button = ({ children, type, onClick, color, toLink }) => {
     padding-bottom: 1.5rem;
     background-color: ${main};
     border-radius: 2rem;
-    font-family: ${Fonts.Body};
-    font-size: 1rem;
+    font-family: ${Fonts.Title};
+    font-size: 2rem;
     border-width: 0px;
     width: 100%;
     color: white;

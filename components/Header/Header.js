@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import navPrincipalItems from "../../lib/navPrincipalItems";
+import Link from "next/link";
 
 const MainLogo = styled.img`
   width: 8%;
@@ -29,7 +30,7 @@ const HeaderContainer = styled.div`
   padding: 1.5rem;
 `;
 
-const Header = () => {
+const Header = ({ href }) => {
   // setea el current a home por cambio de pagina
   const changeCurrent = () => {
     navPrincipalItems.map((item) => {
@@ -43,9 +44,11 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <a href="/" onClick={changeCurrent}>
-        <MainLogo src="/images/MainLogo.png" alt="main logo" />
-      </a>
+      <Link href={href} passHref>
+        <a onClick={changeCurrent}>
+          <MainLogo src="/images/MainLogo.png" alt="main logo" />
+        </a>
+      </Link>
     </HeaderContainer>
   );
 };

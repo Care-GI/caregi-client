@@ -3,23 +3,23 @@ import styled from "@emotion/styled";
 import Axios from "axios";
 
 // constants
-import { Fonts } from "../constants/Fonts";
-import { Colors } from "../constants/Colors";
+import { Fonts } from "../../constants/Fonts";
+import { Colors } from "../../constants/Colors";
 
 // components
-import Tittle from "../components/Tilttle/Tittle";
-import IconForm from "../components/IconForm/IconForm";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import { ScreenPurple } from "../styled-components/screen/screen";
+import Tittle from "../../components/Tilttle/Tittle";
+import IconForm from "../../components/IconForm/IconForm";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { ScreenPurple } from "../../styled-components/screen/screen";
 
 // Helpers
-import { proxy } from "../constants/proxy";
-import { StatusAcountContext } from "../context/StatusAcountContext";
+import { proxy } from "../../constants/proxy";
+import { StatusAcountContext } from "../../context/StatusAcountContext";
 import { useSelector } from "react-redux";
-import axiosClient from "../config/axios";
-import Layout from "../layout/Layout";
-import NavBarApp from "../layout/NavBarApp";
-import useSecure from "../hooks/useSecure";
+import axiosClient from "../../config/axios";
+import Layout from "../../layout/Layout";
+import NavBarApp from "../../layout/NavBarApp";
+import useSecure from "../../hooks/useSecure";
 
 const Container = styled.div`
   background-color: white;
@@ -119,8 +119,8 @@ const ConfirmAcountForm = ({ history }) => {
   };
 
   return (
-    <Layout navActive={false} appOn={true}>
-      <Secure>
+    <Secure>
+      <Layout navActive={false} appOn={true}>
         <ScreenPurple>
           <Container className="col-lg-4 col-md-4 m-auto">
             {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
@@ -156,8 +156,8 @@ const ConfirmAcountForm = ({ history }) => {
             </form>
           </Container>
         </ScreenPurple>
-      </Secure>
-    </Layout>
+      </Layout>
+    </Secure>
   );
 };
 

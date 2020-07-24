@@ -1,14 +1,13 @@
 // funcionalidad de autenticacion y el index router
 import React from "react";
-import _useAuth from "../../hooks/_useAuth";
 import LayoutApp from "../../layout/LayoutApp";
 
-const dates = ({ history }) => {
+const profile = () => {
   return (
     <LayoutApp>
-      <h1>Mostrando las citas</h1>
+      <h1>Perfil</h1>
     </LayoutApp>
   );
 };
 
-export default dates;
+export default profile;

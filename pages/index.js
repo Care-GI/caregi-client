@@ -111,14 +111,16 @@ const TextInfo = styled.h4`
 `;
 
 const Home = () => {
-  const [messagewelcome, setMessagewelcome] = useState("de calidad");
-
   return (
     <>
       <Layout navActive={true}>
         {/*   Screen de welcome  */}
-        <Screen color={"white"} image="/images/ImageSmallBackGround.png">
-          <div className="row">
+        <Screen
+          color={"white"}
+          image="/images/ImageSmallBackGround.png"
+          extraSize
+        >
+          <div className="row mt-5">
             <div className="col-lg-8 col-sm-12 p-5">
               <CardContainer>
                 <Card
@@ -130,7 +132,7 @@ const Home = () => {
                   <TitleWelcome>
                     La App Inteligente que <span>cuida de tu Salud.</span>
                   </TitleWelcome>
-                  <IconBulb />
+                  <IconBulb icon=" fa-lightbulb" />
                   <SubtitleWelcome>
                     Sin necesidad <span>de salir</span>
                   </SubtitleWelcome>
