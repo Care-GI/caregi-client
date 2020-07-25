@@ -44,7 +44,7 @@ export const ScreenSecondaryLight = styled.div`
 export const ScreenSecondaryDark = styled.div`
   /* ... */
   width: 100%;
-  height: ${840 + 1}px;
+  height: ${840 + 200}px;
   background-color: ${Colors.secondaryDark.rgb};
   padding: 2rem;
 

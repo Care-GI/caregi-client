@@ -3,14 +3,17 @@ import styled from "@emotion/styled";
 import { Fonts } from "../../constants/Fonts";
 
 const Tittle = ({ children, color, size }) => {
-  const TitleText = styled.h2`
+  const TitleText = styled.div`
     /* ... */
     font-family: ${Fonts.Decoration};
     color: ${color};
-    font-size: ${size};
     margin-bottom: 2rem;
     text-align: center;
-    font-weight: bold;
+
+    h2 {
+      font-size: ${size};
+      font-weight: bolder;
+    }
   `;
 
   return <TitleText>{children}</TitleText>;

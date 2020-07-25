@@ -12,16 +12,18 @@ import styled from "@emotion/styled";
 import { Colors } from "../../constants/Colors";
 import moment from "moment";
 import Dates from "../../components/Dates";
+import Link from "next/link";
 
 const Main = () => {
   const FirstPartContainer = styled.div`
     color: white;
     justify-content: center;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 
     h2 {
       margin-top: 3rem;
+      font-size: 2.5rem;
     }
   `;
 
@@ -33,21 +35,24 @@ const Main = () => {
 
   const SecondPartContainer = styled.div`
     color: white;
-    z-index: 2;
   `;
 
   return (
     <LayoutApp>
       <ScreenPurple>
         <FirstPartContainer>
-          <Tittle>Disponibles</Tittle>
-          <Tittle>Estamos listos para ayudarte!</Tittle>
+          <Tittle>
+            <h2>Disponibles</h2>
+          </Tittle>
+          <Tittle>
+            <h2>Estamos listos para ayudarte!</h2>
+          </Tittle>
         </FirstPartContainer>
         <ButtonWrapper>
           <Button
             color={{
-              main: Colors.secondaryLigth.hexa,
-              hover: Colors.secondaryDark.rgb,
+              hover: Colors.secondaryLigth.hexa,
+              main: Colors.secondaryDark.rgb,
             }}
           >
             Pedir una cita
@@ -61,9 +66,19 @@ const Main = () => {
       <ScreenSecondaryDark>
         <SecondPartContainer>
           <Tittle className="few-left" size="4rem">
-            Citas Recientes
-            <Dates />
+            <h2>Citas Recientes</h2>
           </Tittle>
+          <Tittle>
+            <Link href="/app/dates" passHref>
+              <a className="link">Ver todas las citas</a>
+            </Link>
+          </Tittle>
+          <Dates />
+          <img
+            src="/svg/undraw_receipt_ecdd.svg"
+            style={{ position: "absolute", bottom: "-79.5rem", left: "-4rem" }}
+            alt="Road Svg undraw credits"
+          />
         </SecondPartContainer>
       </ScreenSecondaryDark>
     </LayoutApp>

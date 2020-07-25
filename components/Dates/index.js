@@ -102,7 +102,9 @@ const Dates = () => {
         {exampleDates.map((item, i) => (
           <div className="col-md-12 col-lg-6 mt-5">
             <CardPurple>
-              <Tittle color="black">Cita {i + 1}</Tittle>
+              <Tittle color="black">
+                <h2>Cita {i + 1}</h2>
+              </Tittle>
               {item.active ? (
                 <h5 style={{ color: "green", marginBottom: "1.5rem" }}>
                   Activa
