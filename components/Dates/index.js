@@ -115,7 +115,7 @@ const Dates = () => {
                 </h5>
               )}
               <h3>Atendido por:</h3>
-              <p>{item.doctorName}</p>
+              <p>Dr. {item.doctorName}</p>
               <h3>Fecha:</h3>
               <p>{item.date}</p>
               {showMore.state && showMore.position === i ? (
