@@ -50,7 +50,7 @@ const Main = (props) => {
           />
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         </Helmet>
-        <Header href="/" />
+        <Header href="/app/home" />
 
         <NavBarApp />
         {props.children}
