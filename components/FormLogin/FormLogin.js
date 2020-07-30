@@ -7,6 +7,7 @@ import IconForm from "../../components/IconForm/IconForm";
 import IconBulb from "../../components/IconBulb/IconBulb";
 import { dimension } from "../../constants/Dimensions";
 import { Colors } from "../../constants/Colors";
+import Link from "next/link";
 
 const TitleCard = styled.h1`
   /* ... */
@@ -69,13 +70,13 @@ const FormLogin = ({ handleSubmit, handleChange, data }) => {
         />
         <HelpContainer className="m-auto">
           <div>
-            <a href="/recovery/email" style={{ ...style.link }}>
-              Olvidaste tu Contraseña...
-            </a>
+            <Link href="/recovery/password" passHref>
+              <a>Olvidaste tu Contraseña...</a>
+            </Link>
             <br />
-            <a href="/recovery/username" style={{ ...style.link }}>
-              Olvidaste tu Usuario....
-            </a>
+            <Link href="/recovery/username" passHref>
+              <a>Olvidaste tu Usuario....</a>
+            </Link>
           </div>
         </HelpContainer>
         <button className="btn btn-primary btn-block mt-4">Ingresar</button>
