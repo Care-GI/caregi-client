@@ -31,6 +31,7 @@ const IconForm = ({
           value={value}
           name={name}
           maxLength={maxLength}
+          autoFocus
         />
       </div>
     </>

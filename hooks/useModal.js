@@ -22,12 +22,12 @@ const useModal = (init) => {
     <>
       <div
         style={{
-          width: "80%",
-          height: "80%",
+          width: "50%",
+          height: "50%",
           backgroundColor: "white",
           position: "fixed",
-          left: "8%",
-          top: "5%",
+          left: "25%",
+          top: "20%",
           zIndex: 2,
           borderRadius: "2rem",
           borderWidth: "1rem",

@@ -76,7 +76,9 @@ const StepOne = ({ nextStep, setLoading }) => {
       {open ? (
         <Modal>
           <div className="mt-5">
-            <Tittle color="purple">Ayudanos a crecer</Tittle>
+            <Tittle color="purple">
+              <h2>Ayudanos a crecer</h2>
+            </Tittle>
             <TextBody>
               De momento no tenemos tanto alcance somos una pequeña{" "}
               <strong>Start Up.</strong>
@@ -96,7 +98,9 @@ const StepOne = ({ nextStep, setLoading }) => {
       <div className="contianer">
         <div className="row">
           <div className="col-12">
-            <Tittle color="#fff">Checa Disponibilidad en tu zona</Tittle>
+            <Tittle color="#fff">
+              <h2>Checa Disponibilidad en tu zona</h2>
+            </Tittle>
 
             <IconQuestionContainer
               onClick={() => {
@@ -142,9 +146,9 @@ const StepOne = ({ nextStep, setLoading }) => {
               </button>
               <img
                 className="mt-5"
-                src="../../images/googlemaps.svg"
+                src="svg/undraw_current_location_rypt.svg"
                 style={{
-                  width: "15rem",
+                  width: "30rem",
                   display: "block",
                   margin: "auto",
                 }}

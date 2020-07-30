@@ -57,7 +57,7 @@ const ButtonMainContianer = styled.div`
   margin-top: 3rem;
 
   div {
-    width: 40%;
+    width: 50%;
   }
 
   @media (max-width: 880px) {
@@ -191,7 +191,7 @@ const Home = () => {
             <div className="row m-auto">
               <div className="col-lg-6 mt-5">
                 <Tittle size="3rem" color={Colors.primary.hexa}>
-                  Crea una Cuenta
+                  <h2>Crea una Cuenta</h2>
                 </Tittle>
                 <TextInfo>
                   Crea una cuenta de manera gratuita.
@@ -209,7 +209,7 @@ const Home = () => {
 
               <div className="col-lg-6 mt-5">
                 <Tittle size="3rem" color={Colors.primary.hexa}>
-                  Elige un Doctor Certificado
+                  <h2>Elige un Doctor Certificado</h2>
                 </Tittle>
                 <TextInfo>
                   Tenemos personal capacitado para darte un primer vistazo.
@@ -225,7 +225,7 @@ const Home = () => {
               </div>
               <div className="col-lg-6 mt-5">
                 <Tittle size="3rem" color={Colors.primary.hexa}>
-                  Llegamos a tu hogar
+                  <h2>Llegamos a tu hogar</h2>
                 </Tittle>
                 <TextInfo>
                   Llevamos las medicinas que necesitas y el mejor servicio

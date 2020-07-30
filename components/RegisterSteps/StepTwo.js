@@ -168,7 +168,9 @@ const StepTwo = ({ nextStep }) => {
       >
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12">
-            <Tittle>Datos</Tittle>
+            <Tittle>
+              <h2>Datos</h2>
+            </Tittle>
             <form>
               <Input
                 type="text"
@@ -206,7 +208,9 @@ const StepTwo = ({ nextStep }) => {
               borderColor: Colors.secondaryLigth.hexa,
             }}
           >
-            <Tittle>Ubicación</Tittle>
+            <Tittle>
+              <h2>Ubicación</h2>
+            </Tittle>
             <form>
               <Input
                 type="text"

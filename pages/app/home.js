@@ -10,11 +10,11 @@ import Tittle from "../../components/Tilttle/Tittle";
 import Button from "../../components/Button/Button";
 import styled from "@emotion/styled";
 import { Colors } from "../../constants/Colors";
-import moment from "moment";
 import Dates from "../../components/Dates";
 import Link from "next/link";
 
 const Main = () => {
+  console.log("recargando");
   const FirstPartContainer = styled.div`
     color: white;
     justify-content: center;
@@ -76,7 +76,11 @@ const Main = () => {
           <Dates />
           <img
             src="/svg/undraw_receipt_ecdd.svg"
-            style={{ position: "absolute", bottom: "-79.5rem", left: "-4rem" }}
+            style={{
+              position: "absolute",
+              bottom: "-79.5rem",
+              left: "-4rem",
+            }}
             alt="Road Svg undraw credits"
           />
         </SecondPartContainer>

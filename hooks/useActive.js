@@ -10,15 +10,26 @@ import { proxy } from "../constants/proxy";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import { setActiveStatus } from "../redux/actions/userActions";
 
-const useActive = () => {
+const FragmentStyled = styled.div`
+  .fondo-black-transparent {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 3;
+  }
+`;
+
+const useActive = (props) => {
   const { active, token, userInformation } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
-  const axios = axiosClient(token);
 
   const [error, setError] = useState({ state: false, msg: "" });
   const [wait, setWait] = useState(false);
   const [code, setCode] = useState("");
+
+  const axios = axiosClient(token);
 
   const handleSendEmail = () => {
     const fetchMail = async () => {
@@ -45,7 +56,7 @@ const useActive = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        setError({ state: true, msg: "No podemos mandar uno nuevo" });
       }
     };
 
@@ -81,7 +92,7 @@ const useActive = () => {
             dispatch(setActiveStatus(true));
         }
       } catch (error) {
-        console.log(error);
+        setError({ state: true, msg: "Por favor revisa tu codigo" });
       }
     };
 
@@ -89,70 +100,60 @@ const useActive = () => {
     fetchConfirm();
   };
 
-  let Component = (props) => <Fragment>{props.children}</Fragment>;
+  const handleChange = (e) => {
+    setCode(e.target.value);
+  };
 
-  const FragmentStyled = styled.div`
-    .fondo-black-transparent {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-    }
-  `;
+  if (active) return null;
 
-  if (!active) {
-    Component = (props) => (
-      <FragmentStyled>
-        <div className="fondo-black-transparent">
-          <div
-            style={{
-              marginTop: "10%",
-              padding: "3rem 30rem 1rem 30rem",
-            }}
-          >
-            <CardPurple>
-              <h1>Tienes que activar tu cuenta</h1>
-              {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
-              <Tittle>
-                Antes de empezar, necesitamos que actives tu cuenta!
-              </Tittle>
+  return (
+    <FragmentStyled>
+      <div className="fondo-black-transparent">
+        <div
+          style={{
+            marginTop: "10%",
+            padding: "3rem 30rem 1rem 30rem",
+          }}
+        >
+          <CardPurple>
+            <h1>Tienes que activar tu cuenta</h1>
+            {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
+            <Tittle>
+              <h2>Antes de empezar, necesitamos que actives tu cuenta!</h2>
+            </Tittle>
 
-              <h4>{userInformation.name}</h4>
-              <p>
-                Te damos la bienvenidad a la App, ahora nos toca cuidar de tu
-                salud.
-              </p>
-              <h5>
-                Enviamos un correo con el código de activación de tu cuenta.
-              </h5>
-              <a
-                style={{ fontFamily: Fonts.Body, cursor: "pointer" }}
-                onClick={handleSendEmail}
-              >
-                No recibiste el código, enviar nuevamente
-              </a>
-              <form className="mt-4" onSubmit={handleSubmit}>
-                <IconForm
-                  type="number"
-                  iconClass="fas fa-ticket-alt"
-                  placeholder="Código"
-                  max="99999"
-                  onChange={(event) => setCode(event.target.value)}
-                />
-                <button className="btn btn-primary btn-block">
-                  Activar cuenta
-                </button>
-              </form>
-            </CardPurple>
-          </div>
+            <h4>{userInformation.name}</h4>
+            <p>
+              Te damos la bienvenidad a la App, ahora nos toca cuidar de tu
+              salud.
+            </p>
+            <h5>
+              Enviamos un correo con el código de activación de tu cuenta.
+            </h5>
+            <a
+              style={{ fontFamily: Fonts.Body, cursor: "pointer" }}
+              onClick={handleSendEmail}
+            >
+              No recibiste el código, enviar nuevamente
+            </a>
+            <form className="mt-4" onSubmit={handleSubmit}>
+              <IconForm
+                type="number"
+                iconClass="fas fa-ticket-alt"
+                placeholder="Código"
+                max="99999"
+                onChange={handleChange}
+                value={code}
+              />
+              <button className="btn btn-primary btn-block">
+                Activar cuenta
+              </button>
+            </form>
+          </CardPurple>
         </div>
-        <div>{props.children}</div>
-      </FragmentStyled>
-    );
-  }
-
-  return [Component];
+      </div>
+    </FragmentStyled>
+  );
 };
 
 export default useActive;
