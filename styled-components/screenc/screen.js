@@ -6,8 +6,7 @@ export const ScreenPurple = styled.div`
   width: 100%;
   height: ${840 + 1}px;
   background-color: ${Colors.primary.hexa};
-  padding: 2rem;
-
+  padding-top: 3rem;
   /* Tableta Mode */
   @media (max-width: 768px) {
     width: 800px;

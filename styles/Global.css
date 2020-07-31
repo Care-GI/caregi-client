@@ -8,3 +8,10 @@
 body {
   overflow-x: hidden;
 }
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+  margin: 2rem, 2rem;
+  color: white;
+}

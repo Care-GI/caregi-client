@@ -5,7 +5,7 @@ import useNav from "../hooks/useNav";
 import navPrincipalItems from "../lib/navPrincipalItems";
 import NavBarApp from "./NavBarApp";
 
-const Layout = (props) => {
+const Layout = ({ children, navActive }) => {
   // eslint-disable-next-line
   const [navstate, Nav, setNavstate] = useNav(false, navPrincipalItems);
 
@@ -49,8 +49,8 @@ const Layout = (props) => {
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
       </Helmet>
       <Header href="/" />
-      {props.navActive && <Nav />}
-      {props.children}
+      {navActive && <Nav />}
+      {children}
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

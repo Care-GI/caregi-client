@@ -128,11 +128,7 @@ const NavBarApp = () => {
         text-align:center;
       }
     } 
-
-
-
-
-  `;
+`;
 
   return (
     <Fragment>
