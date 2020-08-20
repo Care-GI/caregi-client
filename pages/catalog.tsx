@@ -39,12 +39,12 @@ const ItemsContainer = styled.div`
 `;
 
 const catalog = () => {
-  useEffect(async () => {
-    const products = await Axios.get(`${proxy}/api/product/all`);
-  }, []);
+  // useEffect(async () => {
+  //   const products = await Axios.get(`${proxy}/api/product/all`);
+  // }, []);
 
   return (
-    <Layout navActive="true">
+    <Layout navActive={true}>
       <ScreenPurple>
         <h2 className="mt-5">Nuestro Catalogo de productos</h2>
         <ItemsContainer>
@@ -53,7 +53,7 @@ const catalog = () => {
               <input />
             </div>
             <div className="left">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </div>
           </NavSearchContainer>
         </ItemsContainer>

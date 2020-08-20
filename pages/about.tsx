@@ -3,7 +3,6 @@ import Layout from "../layout/Layout";
 import { ScreenPurple as Screen } from "../styled-components/screenc/screen";
 import { Fonts } from "../constants/Fonts";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import { CardBlueMedium } from "../styled-components/card/card";
 import Link from "next/link";
 
@@ -39,7 +38,7 @@ const about = () => {
   `;
 
   return (
-    <Layout navActive="true">
+    <Layout navActive={true}>
       <Screen>
         <FirstZoneContainer>
           <h1>Conocenos Mas</h1>

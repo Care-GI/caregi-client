@@ -1,7 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const Screen = ({ children, color, image, extraSize }) => {
+export interface ScreenProps {
+  color?: string;
+  image?: string;
+  extraSize?: number;
+}
+
+const Screen: React.SFC<ScreenProps> = ({
+  children,
+  color,
+  image,
+  extraSize,
+}) => {
   const Div = styled.div`
     /* ... */
     width: 100%;

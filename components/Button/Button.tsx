@@ -4,9 +4,14 @@ import Link from "next/link";
 
 //Constants
 import { Fonts } from "../../constants/Fonts";
-import { dimension } from "../../constants/Dimensions";
 
-const Button = ({ children, type, onClick, color, toLink }) => {
+export interface ButtonProps {
+  color?: TColorPropButton;
+  toLink: string;
+  as?: string;
+}
+
+const Button: React.SFC<ButtonProps> = ({ children, color, toLink, as }) => {
   // extracting from color props
 
   const { font, main, hover } = color;
@@ -36,15 +41,12 @@ const Button = ({ children, type, onClick, color, toLink }) => {
     }
   `;
 
-  const LinkStyled = styled(Link)`
-    text-decoration: none;
-    color: white;
-  `;
-
   return (
-    <ButtonContainer href={toLink} className="text">
-      {children}
-    </ButtonContainer>
+    <Link href={toLink} as={as}>
+      <ButtonContainer href={toLink} className="text">
+        {children}
+      </ButtonContainer>
+    </Link>
   );
 };
 

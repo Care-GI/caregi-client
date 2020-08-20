@@ -57,7 +57,7 @@ const Login = () => {
     event.preventDefault();
     // start loading
 
-    if (dataLog.id.trim("") === "") {
+    if (dataLog.id.trim() === "") {
       dispatch(showError("Rellenar todos los campos"));
       return;
     } else if (dataLog.password.length < 5) {
@@ -108,7 +108,7 @@ const Login = () => {
         {loading ? (
           <Loading />
         ) : (
-          <ScreenPurple color={Colors.secondaryDark.rgb} extraSize={1}>
+          <ScreenPurple color={Colors.secondaryDark.rgb}>
             <div className="container">
               <div className="col-lg-6 col-md-6 col-sm-12 m-auto">
                 {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}

@@ -118,7 +118,7 @@ const Home = () => {
         <Screen
           color={"white"}
           image="/images/ImageSmallBackGround.png"
-          extraSize
+          extraSize={1}
         >
           <div className="row mt-5">
             <div className="col-lg-8 col-sm-12 p-5">
