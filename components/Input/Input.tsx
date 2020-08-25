@@ -1,7 +1,17 @@
 import React from "react";
 import { Fonts } from "../../constants/Fonts";
 
-const Input = ({
+export interface InputProps {
+  name: string;
+  placeholder?: string;
+  value?: string | number;
+  type: string;
+  max?: number | string;
+  onChange?: any | Function;
+  defaultValue?: string;
+}
+
+const Input: React.SFC<InputProps> = ({
   name,
   placeholder,
   value,

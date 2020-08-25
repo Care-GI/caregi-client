@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import Tittle from "../../components/Tilttle/Tittle";
+import Title from "../Title/Title";
 import { Colors } from "../../constants/Colors";
-import Input from "../../components/Input/Input";
+import Input from "../Input/Input";
 import moment from "moment";
 
 //Hooks
@@ -12,7 +12,7 @@ import { optionsUbication } from "../../lib/helpers";
 
 //COntext
 import { FormRegisterContext } from "../../context/FormRegisterContext";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 const selectOptions = [
   { name: "gender", title: "Masculino", value: "MASCULINO" },
@@ -168,9 +168,9 @@ const StepTwo = ({ nextStep }) => {
       >
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12">
-            <Tittle>
+            <Title color="white" size="2rem">
               <h2>Datos</h2>
-            </Tittle>
+            </Title>
             <form>
               <Input
                 type="text"
@@ -208,9 +208,9 @@ const StepTwo = ({ nextStep }) => {
               borderColor: Colors.secondaryLigth.hexa,
             }}
           >
-            <Tittle>
+            <Title color="white" size="2rem">
               <h2>Ubicación</h2>
-            </Tittle>
+            </Title>
             <form>
               <Input
                 type="text"

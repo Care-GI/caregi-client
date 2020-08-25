@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import Tittle from "../../components/Tilttle/Tittle";
+import Title from "../Title/Title";
 import { Colors } from "../../constants/Colors";
 import Axios from "axios";
 
-import IconForm from "../../components/IconForm/IconForm";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import IconForm from "../IconForm/IconForm";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { FormRegisterContext } from "../../context/FormRegisterContext";
 import { proxy } from "../../constants/proxy";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,8 +25,8 @@ const StepThree = ({ nextStep }) => {
 
   const { dataRegister, setDataRegister } = useContext(FormRegisterContext);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setAcountInfo({ ...acountInf, [name]: value });
     setDataRegister({
       ...dataRegister,
@@ -111,7 +111,9 @@ const StepThree = ({ nextStep }) => {
             borderColor: Colors.secondaryDark.rgb,
           }}
         >
-          <Tittle>Informacion de Usuario</Tittle>
+          <Title color="white" size="2rem">
+            Informacion de Usuario
+          </Title>
           <form onSubmit={handleSubmit}>
             <IconForm
               iconClass="fas fa-envelope"
@@ -126,14 +128,14 @@ const StepThree = ({ nextStep }) => {
               name="username"
               type="text"
               onChange={handleChange}
-              maxLength="15"
+              maxLength={15}
             />
             <IconForm
               iconClass="fas fa-phone-alt"
               placeholder="Celular"
               name="cellphone"
               type="number"
-              max="9999999999"
+              max={9999999999}
               onChange={handleChange}
             />
             <IconForm

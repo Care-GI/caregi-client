@@ -2,7 +2,18 @@ import React from "react";
 import { Colors } from "../../constants/Colors";
 import { Fonts } from "../../constants/Fonts";
 
-const IconForm = ({
+export interface IconFormProps {
+  iconClass: string;
+  type?: string;
+  placeholder?: string;
+  value?: string | number;
+  name: string;
+  maxLength?: number;
+  onChange: Function;
+  max?: number;
+}
+
+const IconForm: React.SFC<IconFormProps> = ({
   iconClass,
   type,
   placeholder,
@@ -27,7 +38,7 @@ const IconForm = ({
           type={type}
           className="form-control"
           placeholder={placeholder}
-          onChange={onChange}
+          onChange={(e) => onChange(e)}
           value={value}
           name={name}
           maxLength={maxLength}

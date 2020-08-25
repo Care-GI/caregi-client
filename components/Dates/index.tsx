@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { CardPurple } from "../../styled-components/card/card";
 import moment from "moment";
-import Tittle from "../Tilttle/Tittle";
+import Title from "../Title/Title";
 import MoreInfoDate from "../MoreInfoDate";
 import { Colors } from "../../constants/Colors";
 import ButtonSmall from "../Button/ButtonSmall";
@@ -100,11 +100,11 @@ const Dates = () => {
     <div className="container">
       <div className="row">
         {exampleDates.map((item, i) => (
-          <div className="col-md-12 col-lg-6 mt-5">
+          <div className="col-md-12 col-lg-6 mt-5" key={item._id}>
             <CardPurple>
-              <Tittle color="black">
+              <Title color="black" size="1.2rem">
                 <h2>Cita {i + 1}</h2>
-              </Tittle>
+              </Title>
               {item.active ? (
                 <h5 style={{ color: "green", marginBottom: "1.5rem" }}>
                   Activa
@@ -145,7 +145,14 @@ const Dates = () => {
                     : "Mas Informacion"}
                 </ButtonSmall>
                 <ButtonSmall
-                  color={{ font: "white", main: Colors.secondaryDark.rgb }}
+                  color={{
+                    font: "white",
+                    main: Colors.secondaryDark.rgb,
+                    hover: Colors.secondaryLigth.hexa,
+                  }}
+                  clickfunc={() =>
+                    alert("Seguro vas a eliminar permanentemente")
+                  }
                 >
                   Olvidar
                 </ButtonSmall>

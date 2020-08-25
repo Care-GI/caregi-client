@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
-import Tittle from "../../components/Tilttle/Tittle";
+import Title from "../Title/Title";
 import { Fonts } from "../../constants/Fonts";
 import { Colors } from "../../constants/Colors";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { FormRegisterContext } from "../../context/FormRegisterContext";
 
 //Hooks
@@ -29,7 +28,11 @@ const IconQuestionContainer = styled.div`
   }
 `;
 
-const StepOne = ({ nextStep, setLoading }) => {
+export interface StepOneProps {
+  nextStep?: Function;
+}
+
+const StepOne = ({ nextStep }) => {
   //state
   const [idPharm, setIdPharm] = useState("");
   const [error, setError] = useState(false);
@@ -76,9 +79,9 @@ const StepOne = ({ nextStep, setLoading }) => {
       {open ? (
         <Modal>
           <div className="mt-5">
-            <Tittle color="purple">
+            <Title size="2rem" color="purple">
               <h2>Ayudanos a crecer</h2>
-            </Tittle>
+            </Title>
             <TextBody>
               De momento no tenemos tanto alcance somos una pequeña{" "}
               <strong>Start Up.</strong>
@@ -98,9 +101,9 @@ const StepOne = ({ nextStep, setLoading }) => {
       <div className="contianer">
         <div className="row">
           <div className="col-12">
-            <Tittle color="#fff">
+            <Title size="2rem" color="#fff">
               <h2>Checa Disponibilidad en tu zona</h2>
-            </Tittle>
+            </Title>
 
             <IconQuestionContainer
               onClick={() => {

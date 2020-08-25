@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CardPurple } from "../styled-components/card/card";
 import styled from "@emotion/styled";
-import Tittle from "../components/Tilttle/Tittle";
+import Title from "../components/Title/Title";
 import { Fonts } from "../constants/Fonts";
 import IconForm from "../components/IconForm/IconForm";
 import axiosClient from "../config/axios";
@@ -118,9 +118,9 @@ const useActive = (props) => {
           <CardPurple>
             <h1>Tienes que activar tu cuenta</h1>
             {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
-            <Tittle>
+            <Title>
               <h2>Antes de empezar, necesitamos que actives tu cuenta!</h2>
-            </Tittle>
+            </Title>
 
             <h4>{userInformation.name}</h4>
             <p>

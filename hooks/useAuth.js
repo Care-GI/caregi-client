@@ -2,8 +2,6 @@ import React, { Fragment, useEffect } from "react";
 import { useSelector } from "react-redux";
 import getStatusAcount from "../lib/getStatusAcount";
 import { useRouter } from "next/router";
-import { setLoading } from "../redux/actions/appStatusActions";
-import Loading from "../components/Loading/Loading";
 import { useDispatch } from "react-redux";
 
 const useAuth = () => {

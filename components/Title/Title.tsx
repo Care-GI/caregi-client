@@ -2,7 +2,13 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Fonts } from "../../constants/Fonts";
 
-const Tittle = ({ children, color, size }) => {
+export interface TitleProps {
+  color: string;
+  size: string;
+  className?: string;
+}
+
+const Title: React.SFC<TitleProps> = ({ children, color, size }) => {
   const TitleText = styled.div`
     /* ... */
     font-family: ${Fonts.Decoration};
@@ -19,4 +25,4 @@ const Tittle = ({ children, color, size }) => {
   return <TitleText>{children}</TitleText>;
 };
 
-export default Tittle;
+export default Title;

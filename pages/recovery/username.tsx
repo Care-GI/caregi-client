@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../layout/Layout";
 import { CardPurple } from "../../styled-components/card/card";
-import Tittle from "../../components/Tilttle/Tittle";
+import Title from "../../components/Title/Title";
 import { Colors } from "../../constants/Colors";
 import { ScreenSecondaryLight } from "../../styled-components/screen/screen";
 import IconForm from "../../components/IconForm/IconForm";
@@ -12,23 +12,28 @@ const username = () => {
   };
 
   return (
-    <Layout navActive="true">
+    <Layout navActive={true}>
       <ScreenSecondaryLight>
         <div className="container">
           <div style={{ padding: "0rem 5rem" }}>
             <CardPurple className="mt-5">
               <form onSubmit={handleSubmit}>
-                <Tittle color={Colors.primary.hexa}>
+                <Title color={Colors.primary.hexa} size={"2rem"}>
                   <h2>Te recordamos cual es tu usuario</h2>
-                </Tittle>
+                </Title>
                 <p className="mt-4">
                   De esa manera podras inciar sesion si problemas.
                 </p>
                 <h3>Ingresa tu correo</h3>
                 <div className="mt-5">
                   <IconForm
+                    type="text"
                     placeholder="Ingresa tu correo"
                     iconClass="fas fa-paper-plane"
+                    onChange={() => {
+                      console.log("funcion change");
+                    }}
+                    name="email"
                   />
                   <button
                     className="btn btn-lg btn-primary"

@@ -4,9 +4,19 @@ import Link from "next/link";
 
 //Constants
 import { Fonts } from "../../constants/Fonts";
-import { dimension } from "../../constants/Dimensions";
 
-const ButtonSmall = ({ children, type, clickfunc, color, toLink }) => {
+export interface ButtonSmallProps {
+  clickfunc?: Function;
+  color: TColorPropButton;
+  toLink?: string;
+}
+
+const ButtonSmall: React.SFC<ButtonSmallProps> = ({
+  children,
+  clickfunc,
+  color,
+  toLink,
+}) => {
   // extracting from color props
 
   const { font, main, hover } = color;
@@ -24,25 +34,30 @@ const ButtonSmall = ({ children, type, clickfunc, color, toLink }) => {
     font-size: 1.2rem;
     border-width: 0px;
     width: 100%;
-    color: white;
+    color: ${font};
 
     :hover {
       background-color: ${hover};
       text-decoration: none;
-      color: white;
+      color: ${font};
       border-radius: 2.5rem;
       font-size: 1.3rem;
       cursor: pointer;
     }
   `;
 
-  const LinkStyled = styled(Link)`
-    text-decoration: none;
-    color: white;
-  `;
+  // Ref button
+
+  if (toLink) {
+    <Link href={toLink}>
+      <ButtonContainer className="text">{children}</ButtonContainer>
+    </Link>;
+  }
+
+  // Button Action doesnt recibe toLink
 
   return (
-    <ButtonContainer href={toLink} className="text" onClick={clickfunc}>
+    <ButtonContainer className="text" onClick={(e) => clickfunc(e)}>
       {children}
     </ButtonContainer>
   );

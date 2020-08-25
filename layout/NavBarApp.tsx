@@ -98,16 +98,15 @@ const NavBarApp = () => {
       }
     }
 
-    .carrito-compras{
-      color: ${Colors.secondaryLigth.rgb},1);
-      :hover{
-        transform: scale(1.4)
+    .carrito-compras {
+      color: ${Colors.secondaryLigth.rgb};
+      :hover {
+        transform: scale(1.4);
       }
     }
 
-
-     @media(max-width: ${dimension.tablet}){
-        ul {
+    @media (max-width: ${dimension.tablet}) {
+      ul {
         background-color: ${Colors.secondaryLigth.hexa};
         border-radius: 1.3rem;
       }
@@ -116,19 +115,17 @@ const NavBarApp = () => {
       }
     }
 
-  
-    
-    @media(max-width: ${dimension.mobileLarge} ){
+    @media (max-width: ${dimension.mobileLarge}) {
       ul {
         background-color: ${Colors.secondaryLigth.hexa};
         border-radius: 1.3rem;
       }
       .half {
         width: 100%;
-        text-align:center;
+        text-align: center;
       }
-    } 
-`;
+    }
+  `;
 
   return (
     <Fragment>
@@ -142,20 +139,18 @@ const NavBarApp = () => {
                 onTouchStartCapture={() => setShow("relative")}
               >
                 <li>
-                  <Link href="">
-                    <div className="menu-main">
-                      <p className="opener">Alejandro</p>
-                      <i class="fas fa-angle-double-down"></i>
-                    </div>
-                  </Link>
+                  <div className="menu-main">
+                    <p className="opener">Alejandro</p>
+                    <i className="fas fa-angle-double-down"></i>
+                  </div>
                 </li>
                 <li>
-                  <Link href="/app/profile" passHref>
+                  <Link href="/app/profile">
                     <a className="hidden">Perfil</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/app/settings" passHref>
+                  <Link href="/app/settings">
                     <a className="hidden">Configuracion</a>
                   </Link>
                 </li>
@@ -169,7 +164,7 @@ const NavBarApp = () => {
           </div>
           <div className="half">
             <Link href="/app/cart" passHref>
-              <a className="icon" to="/app/cart">
+              <a className="icon">
                 <i className="fas fa-cart-plus fa-2x carrito-compras"></i>
               </a>
             </Link>
@@ -181,13 +176,13 @@ const NavBarApp = () => {
         {/* <Link className="icon" to="/app/profile">
           Perfil
         </Link> */}
-        <Link className="icon" href="/app/dates">
+        <Link href="/app/dates">
           <a className="icon">Citas</a>
         </Link>
-        <Link className="icon" href="/app/delivery">
+        <Link href="/app/delivery">
           <a className="icon">Pedidos</a>
         </Link>
-        <Link className="icon" href="/app/store">
+        <Link href="/app/store">
           <a className="icon">Tienda</a>
         </Link>
         <Link href="/app/doctors" passHref>

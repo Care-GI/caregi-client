@@ -8,7 +8,7 @@ import { Fonts } from "../constants/Fonts";
 // Pasos del register
 import StepOne from "../components/RegisterSteps/StepOne";
 import StepTwo from "../components/RegisterSteps/StepTwo";
-import StepThree from "../components/RegisterSteps/SetpThree";
+import StepThree from "../components/RegisterSteps/StepThree";
 import Loading from "../components/Loading/Loading";
 
 // Redux
@@ -86,7 +86,7 @@ const Register = () => {
                       className="progress-bar"
                       role="progressbar"
                       style={{ width: progress + "%" }}
-                      aria-valuemax="100"
+                      aria-aluemax="100"
                     ></div>
                   </div>
                 </div>

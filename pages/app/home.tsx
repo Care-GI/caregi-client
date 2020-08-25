@@ -6,7 +6,7 @@ import {
   ScreenPurple,
   ScreenSecondaryDark,
 } from "../../styled-components/screen/screen";
-import Tittle from "../../components/Tilttle/Tittle";
+import Title from "../../components/Title/Title";
 import Button from "../../components/Button/Button";
 import styled from "@emotion/styled";
 import { Colors } from "../../constants/Colors";
@@ -41,19 +41,21 @@ const Main = () => {
     <LayoutApp>
       <ScreenPurple>
         <FirstPartContainer>
-          <Tittle>
+          <Title color="white" size="2rem">
             <h2>Disponibles</h2>
-          </Tittle>
-          <Tittle>
+          </Title>
+          <Title color="white" size="2rem">
             <h2>Estamos listos para ayudarte!</h2>
-          </Tittle>
+          </Title>
         </FirstPartContainer>
         <ButtonWrapper>
           <Button
             color={{
               hover: Colors.secondaryLigth.hexa,
               main: Colors.secondaryDark.rgb,
+              font: "white",
             }}
+            toLink="/"
           >
             Pedir una cita
           </Button>
@@ -65,14 +67,14 @@ const Main = () => {
       </ScreenPurple>
       <ScreenSecondaryDark>
         <SecondPartContainer>
-          <Tittle className="few-left" size="4rem">
+          <Title className="few-left" color="white" size="4rem">
             <h2>Citas Recientes</h2>
-          </Tittle>
-          <Tittle>
+          </Title>
+          <Title color="white" size="2rem">
             <Link href="/app/dates" passHref>
               <a className="link">Ver todas las citas</a>
             </Link>
-          </Tittle>
+          </Title>
           <Dates />
           <img
             src="/svg/undraw_receipt_ecdd.svg"

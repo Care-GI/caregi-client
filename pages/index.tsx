@@ -9,12 +9,11 @@ import Screen from "../components/ScreenC/Screen";
 //lib
 import { Fonts } from "../constants/Fonts";
 import { Colors } from "../constants/Colors";
-import { dimension } from "../constants/Dimensions";
 import Card from "../components/Card/Card";
 import IconSlider from "../components/IconSlider/IconSlider";
 import Button from "../components/Button/Button";
 import IconBulb from "../components/IconBulb/IconBulb";
-import Tittle from "../components/Tilttle/Tittle";
+import Title from "../components/Title/Title";
 import Layout from "../layout/Layout";
 
 // Styled Components
@@ -190,9 +189,9 @@ const Home = () => {
           <div className="container mt-5">
             <div className="row m-auto">
               <div className="col-lg-6 mt-5">
-                <Tittle size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={Colors.primary.hexa}>
                   <h2>Crea una Cuenta</h2>
-                </Tittle>
+                </Title>
                 <TextInfo>
                   Crea una cuenta de manera gratuita.
                   <br /> De esta manera te podemos dar le mejor servicio
@@ -208,9 +207,9 @@ const Home = () => {
               </div>
 
               <div className="col-lg-6 mt-5">
-                <Tittle size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={Colors.primary.hexa}>
                   <h2>Elige un Doctor Certificado</h2>
-                </Tittle>
+                </Title>
                 <TextInfo>
                   Tenemos personal capacitado para darte un primer vistazo.
                   Consideranos tu medico de confianza y de cabecera.
@@ -224,9 +223,9 @@ const Home = () => {
                 />
               </div>
               <div className="col-lg-6 mt-5">
-                <Tittle size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={Colors.primary.hexa}>
                   <h2>Llegamos a tu hogar</h2>
-                </Tittle>
+                </Title>
                 <TextInfo>
                   Llevamos las medicinas que necesitas y el mejor servicio
                   personalizado. <br />
