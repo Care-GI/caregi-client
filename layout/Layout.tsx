@@ -10,7 +10,7 @@ export interface LayoutProps {
 
 const Layout: React.SFC<LayoutProps> = ({ children, navActive }) => {
   // eslint-disable-next-line
-  const [navstate, Nav, setNavstate] = useNav(false, navPrincipalItems);
+  const Nav = useNav(false, navPrincipalItems);
 
   return (
     <>

@@ -86,7 +86,7 @@ const Register = () => {
                       className="progress-bar"
                       role="progressbar"
                       style={{ width: progress + "%" }}
-                      aria-aluemax="100"
+                      defaultValue="100"
                     ></div>
                   </div>
                 </div>

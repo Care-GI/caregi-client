@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CardPurple } from "../styled-components/card/card";
+import {useRouter} from "next/router"
 import styled from "@emotion/styled";
 import Title from "../components/Title/Title";
 import { Fonts } from "../constants/Fonts";
@@ -24,7 +25,7 @@ const FragmentStyled = styled.div`
 const useActive = (props) => {
   const { active, token, userInformation } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+  const router = useRouter() 
   const [error, setError] = useState({ state: false, msg: "" });
   const [wait, setWait] = useState(false);
   const [code, setCode] = useState("");
@@ -67,7 +68,7 @@ const useActive = (props) => {
     e.preventDefault();
 
     // validar el codigo
-    if (code.trim("") === "") {
+    if (code.trim() === "") {
       setError({ state: true, msg: "Ingresa tu código" });
       return;
     }
@@ -87,7 +88,7 @@ const useActive = (props) => {
             return;
           case 200:
             setError({ state: false, msg: "" });
-            history.push("/app/home");
+            router.push("/app/home");
             // set active en redux
             dispatch(setActiveStatus(true));
         }
@@ -118,7 +119,7 @@ const useActive = (props) => {
           <CardPurple>
             <h1>Tienes que activar tu cuenta</h1>
             {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
-            <Title>
+            <Title size="2rem" color="white">
               <h2>Antes de empezar, necesitamos que actives tu cuenta!</h2>
             </Title>
 
@@ -141,9 +142,10 @@ const useActive = (props) => {
                 type="number"
                 iconClass="fas fa-ticket-alt"
                 placeholder="Código"
-                max="99999"
+                max={99999}
                 onChange={handleChange}
-                value={code}
+                name="code"
+                value={code as string}
               />
               <button className="btn btn-primary btn-block">
                 Activar cuenta

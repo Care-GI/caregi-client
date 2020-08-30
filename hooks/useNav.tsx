@@ -48,7 +48,9 @@ const IconNavBarContainer = styled.div`
   }
 `;
 
-const useNavBar = (initialState, options) => {
+
+ 
+const useNavBar = (initialState:boolean , options: TNavItem []) => {
   const [navopen, setNavopen] = useState(initialState);
   const [iconnav, setIconnav] = useState("fa-ellipsis-h");
   const [navcolor, setNavcolor] = useState("#512b58");
@@ -72,13 +74,12 @@ const useNavBar = (initialState, options) => {
         <NavBar
           items={options}
           handleNavBarChange={handleNavBarChange}
-          navopen={navopen}
         />
       ) : null}
     </>
   );
 
-  return [navopen, Component, setNavopen];
+  return Component 
 };
 
 export default useNavBar;

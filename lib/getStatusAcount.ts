@@ -6,7 +6,6 @@ import {
   setStatusInf,
   setActiveStatus,
 } from "../redux/actions/userActions";
-import { setLoading } from "../redux/actions/appStatusActions";
 
 const getStatusAcount = async (token, router, dispatch) => {
   try {

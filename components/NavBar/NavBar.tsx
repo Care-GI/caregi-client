@@ -24,7 +24,14 @@ const ItemsConatiner = styled.div`
   }
 `;
 
-const NavBar = ({ items, handleNavBarChange, navopen }) => {
+
+export interface INavBarProps {
+  items: TNavItem[];
+  handleNavBarChange: Function | any;
+}
+
+
+const NavBar: React.SFC<INavBarProps> = ({ items, handleNavBarChange  }) => {
   const handleClick = (item) => {
     items.map((item) => {
       if (item.current) {
@@ -35,16 +42,6 @@ const NavBar = ({ items, handleNavBarChange, navopen }) => {
     item.current = true;
     handleNavBarChange();
   };
-
-  // let position = 0;
-  // let width = 0;
-  // if (navopen) {
-  //   position = 0;
-  //   width = 10;
-  // } else {
-  //   position = 200;
-  //   width = 0;
-  // }
 
   const NavBarContainer = styled.div`
     /* ... */

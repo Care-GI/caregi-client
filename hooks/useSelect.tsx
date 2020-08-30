@@ -17,7 +17,7 @@ const useModal = (options) => {
       >
         <option value="">-- Selecciona un sexo --</option>
         {options.map((item) => (
-          <option name={item.name} value={item.value} key={Math.random()}>
+          <option /* name={item.name}*/ value={item.value} key={Math.random()}>
             {item.title}
           </option>
         ))}
