@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutApp from "../../layout/LayoutApp";
 
-const delivery = ({}) => {
+const delivery = () => {
   return (
     <LayoutApp>
       <h1>Mostrando el carrito</h1>

@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutApp from "../../layout/LayoutApp";
 
-const store = ({ history }) => {
+const store = () => {
   return (
     <LayoutApp>
       <h1>Mostrando tienda</h1>

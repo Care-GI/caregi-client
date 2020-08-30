@@ -3,7 +3,7 @@ import React from "react";
 import _useAuth from "../../hooks/useAuth";
 import LayoutApp from "../../layout/LayoutApp";
 
-const dates = ({ history }) => {
+const dates = () => {
   return (
     <LayoutApp>
       <h1>Mostrando las citas</h1>
