@@ -37,8 +37,8 @@
 
 #### Social media
 
-[Instagram](https://instagram.com)
-[FaceBook](https://facebook.com)  
-[Twitter](https://twitter.com)
+- [Instagram](https://instagram.com)
+- [FaceBook](https://facebook.com)
+- [Twitter](https://twitter.com)
 
 Special Thanks to the creators and the developers! 💜
