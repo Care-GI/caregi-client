@@ -1,29 +1,28 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Header from "../components/Header/Header";
-import useNav from "../hooks/useNav";
-import navPrincipalItems from "../lib/navPrincipalItems";
+
+import Header from "@components/Header/Header";
+import useNav from "@hooks/useNav";
+import navPrincipalItems from "@lib/navPrincipalItems";
 
 export interface LayoutProps {
   navActive?: boolean;
 }
 
 const Layout: React.SFC<LayoutProps> = ({ children, navActive }) => {
-  // eslint-disable-next-line
   const Nav = useNav(false, navPrincipalItems);
 
   return (
     <>
       <Helmet title="Care Gi">
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
           content="Web site created using create-react-app"
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         {/*!----BOOTSTRAP--> */}
         <link
           href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/pulse/bootstrap.min.css"

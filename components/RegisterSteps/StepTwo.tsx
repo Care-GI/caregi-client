@@ -1,18 +1,17 @@
 import React, { useContext, useState } from "react";
-import Title from "../Title/Title";
-import { Colors } from "../../constants/Colors";
-import Input from "../Input/Input";
 import moment from "moment";
 
-//Hooks
-import useSelect from "../../hooks/useSelect";
+import Input from "@components/Input/Input";
+import Title from "@components/Title/Title";
+import ErrorMessage from "@components/ErrorMessage/ErrorMessage";
 
-//helpers
-import { optionsUbication } from "../../lib/helpers";
+import { ColorsHexa } from "@constants/Colors";
 
-//COntext
+import useSelect from "@hooks/useSelect";
+
+import { optionsUbication } from "@lib/helpers";
+
 import { FormRegisterContext } from "../../context/FormRegisterContext";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 const selectOptions = [
   { name: "gender", title: "Masculino", value: "MASCULINO" },
@@ -163,7 +162,7 @@ const StepTwo = ({ nextStep }) => {
           borderRadius: "2rem",
           borderWidth: "1rem",
           borderStyle: "groove",
-          borderColor: Colors.secondaryLigth.hexa,
+          borderColor: ColorsHexa.secondaryLigth,
         }}
       >
         <div className="row">
@@ -205,7 +204,7 @@ const StepTwo = ({ nextStep }) => {
             style={{
               borderLeftWidth: "0.3rem",
               borderLeftStyle: "dashed",
-              borderColor: Colors.secondaryLigth.hexa,
+              borderColor: ColorsHexa.secondaryLigth,
             }}
           >
             <Title color="white" size="2rem">

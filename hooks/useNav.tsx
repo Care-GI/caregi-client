@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import NavBar from "../components/NavBar/NavBar";
 import styled from "@emotion/styled";
+import NavBar from "@components/NavBar/NavBar";
 
 const IconNavBarContainer = styled.div`
   /* ... */
@@ -48,9 +48,7 @@ const IconNavBarContainer = styled.div`
   }
 `;
 
-
- 
-const useNavBar = (initialState:boolean , options: TNavItem []) => {
+const useNavBar = (initialState: boolean, options: TNavItem[]) => {
   const [navopen, setNavopen] = useState(initialState);
   const [iconnav, setIconnav] = useState("fa-ellipsis-h");
   const [navcolor, setNavcolor] = useState("#512b58");
@@ -71,15 +69,12 @@ const useNavBar = (initialState:boolean , options: TNavItem []) => {
         ></i>
       </IconNavBarContainer>
       {navopen ? (
-        <NavBar
-          items={options}
-          handleNavBarChange={handleNavBarChange}
-        />
+        <NavBar items={options} handleNavBarChange={handleNavBarChange} />
       ) : null}
     </>
   );
 
-  return Component 
+  return Component;
 };
 
 export default useNavBar;

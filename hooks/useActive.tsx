@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { CardPurple } from "../styled-components/card/card";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 import styled from "@emotion/styled";
-import Title from "../components/Title/Title";
-import { Fonts } from "../constants/Fonts";
-import IconForm from "../components/IconForm/IconForm";
-import axiosClient from "../config/axios";
-import { proxy } from "../constants/proxy";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import { setActiveStatus } from "../redux/actions/userActions";
+
+import { CardPurple } from "@styled-components/card/card";
+import Title from "@components/Title/Title";
+import IconForm from "@components/IconForm/IconForm";
+import ErrorMessage from "@components/ErrorMessage/ErrorMessage";
+
+import axiosClient from "@config/axios";
+
+import { Fonts } from "@constants/Fonts";
+import { proxy } from "@constants/proxy";
+
+import { setActiveStatus } from "@store/actions/userActions";
 
 const FragmentStyled = styled.div`
   .fondo-black-transparent {
@@ -25,7 +29,7 @@ const FragmentStyled = styled.div`
 const useActive = (props) => {
   const { active, token, userInformation } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const router = useRouter() 
+  const router = useRouter();
   const [error, setError] = useState({ state: false, msg: "" });
   const [wait, setWait] = useState(false);
   const [code, setCode] = useState("");
@@ -119,7 +123,7 @@ const useActive = (props) => {
           <CardPurple>
             <h1>Tienes que activar tu cuenta</h1>
             {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}
-            <Title size="2rem" color="white">
+            <Title size="2rem" color="black">
               <h2>Antes de empezar, necesitamos que actives tu cuenta!</h2>
             </Title>
 

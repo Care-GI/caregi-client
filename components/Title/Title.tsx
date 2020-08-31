@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Fonts } from "../../constants/Fonts";
+import { Fonts } from "@constants/Fonts";
 
 export interface TitleProps {
   color: string;
@@ -19,6 +19,8 @@ const Title: React.SFC<TitleProps> = ({ children, color, size }) => {
     h2 {
       font-size: ${size};
       font-weight: bolder;
+      font-family: ${Fonts.Decoration};
+      color: ${color};
     }
   `;
 

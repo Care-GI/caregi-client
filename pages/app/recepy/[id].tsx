@@ -1,6 +1,7 @@
 import React from "react";
-import LayoutApp from "../../../layout/LayoutApp";
 import { useRouter } from "next/router";
+
+import LayoutApp from "@layout/LayoutApp";
 
 const recepy = () => {
   const router = useRouter();

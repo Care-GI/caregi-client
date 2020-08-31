@@ -1,14 +1,16 @@
 import React, { useState, useContext } from "react";
-import Title from "../Title/Title";
-import { Colors } from "../../constants/Colors";
 import Axios from "axios";
 
-import IconForm from "../IconForm/IconForm";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import { ColorsHexa } from "@constants/Colors";
+
+import Title from "@components/Title/Title";
+
+import IconForm from "@components/IconForm/IconForm";
+import ErrorMessage from "@components/ErrorMessage/ErrorMessage";
 import { FormRegisterContext } from "../../context/FormRegisterContext";
-import { proxy } from "../../constants/proxy";
+import { proxy } from "@constants/proxy";
 import { useDispatch, useSelector } from "react-redux";
-import { showError, quitError } from "../../redux/actions/appStatusActions";
+import { showError, quitError } from "@store/actions/appStatusActions";
 
 const StepThree = ({ nextStep }) => {
   // redux
@@ -108,7 +110,7 @@ const StepThree = ({ nextStep }) => {
             borderRadius: "2rem",
             borderWidth: "1rem",
             borderStyle: "groove",
-            borderColor: Colors.secondaryDark.rgb,
+            borderColor: ColorsHexa.secondaryDark,
           }}
         >
           <Title color="white" size="2rem">

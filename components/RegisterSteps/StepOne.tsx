@@ -1,14 +1,15 @@
 import React, { useState, useContext } from "react";
 import styled from "@emotion/styled";
 
-import Title from "../Title/Title";
-import { Fonts } from "../../constants/Fonts";
-import { Colors } from "../../constants/Colors";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import Title from "@components/Title/Title";
+import ErrorMessage from "@components/ErrorMessage/ErrorMessage";
+
+import { Fonts } from "@constants/Fonts";
+import { ColorsHexa } from "@constants/Colors";
 import { FormRegisterContext } from "../../context/FormRegisterContext";
 
 //Hooks
-import useModal from "../../hooks/useModal";
+import useModal from "@hooks/useModal";
 
 //! Styled components
 
@@ -16,13 +17,13 @@ const TextBody = styled.p`
   /* ... */
   font-family: ${Fonts.Body};
   text-align: center;
-  color: ${Colors.primary.hexa};
+  color: ${ColorsHexa.primary};
   font-size: 1.2rem;
 `;
 
 const IconQuestionContainer = styled.div`
   /* ... */
-  color: ${Colors.secondaryLigth.hexa};
+  color: ${ColorsHexa.secondaryLigth};
   :hover {
     cursor: pointer;
   }

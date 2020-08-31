@@ -1,11 +1,11 @@
-import { Colors } from "../../constants/Colors";
+import { ColorsHexa } from "../../constants/Colors";
 import styled from "@emotion/styled";
 
 export const ScreenPurple = styled.div`
   /* ... */
   width: 100%;
   height: ${840 + 1}px;
-  background-color: ${Colors.primary.hexa};
+  background-color: ${ColorsHexa.primary};
   padding-top: 3rem;
   /* Tableta Mode */
   @media (max-width: 768px) {

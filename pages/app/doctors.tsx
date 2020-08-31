@@ -1,7 +1,7 @@
 import React from "react";
-import LayoutApp from "../../layout/LayoutApp";
+import LayoutApp from "@layout/LayoutApp";
 
-const delivery = ({ history }) => {
+const delivery = () => {
   return (
     <LayoutApp>
       <h1>Mostrando doctores</h1>

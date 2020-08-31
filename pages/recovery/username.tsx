@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../layout/Layout";
-import { CardPurple } from "../../styled-components/card/card";
-import Title from "../../components/Title/Title";
-import { Colors } from "../../constants/Colors";
-import { ScreenSecondaryLight } from "../../styled-components/screen/screen";
-import IconForm from "../../components/IconForm/IconForm";
+import Layout from "@layout/Layout";
+import { CardPurple } from "@styled-components/card/card";
+import Title from "@components/Title/Title";
+import { ColorsHexa } from "@constants/Colors";
+import { ScreenSecondaryLight } from "@styled-components/screen/screen";
+import IconForm from "@components/IconForm/IconForm";
 
 const username = () => {
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ const username = () => {
           <div style={{ padding: "0rem 5rem" }}>
             <CardPurple className="mt-5">
               <form onSubmit={handleSubmit}>
-                <Title color={Colors.primary.hexa} size={"2rem"}>
+                <Title color={ColorsHexa.primary} size={"2rem"}>
                   <h2>Te recordamos cual es tu usuario</h2>
                 </Title>
                 <p className="mt-4">

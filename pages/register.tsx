@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+
+import Screen from "@components/ScreenC/Screen";
+
+import { ColorsHexa } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
+
+// Register Steps
+import StepOne from "@components/RegisterSteps/StepOne";
+import StepTwo from "@components/RegisterSteps/StepTwo";
+import StepThree from "@components/RegisterSteps/StepThree";
+import Loading from "@components/Loading/Loading";
+
+import Layout from "@layout/Layout";
 
 import FormRegisterProvider from "../context/FormRegisterContext";
-import Screen from "../components/ScreenC/Screen";
-import { Colors } from "../constants/Colors";
-import { Fonts } from "../constants/Fonts";
-
-// Pasos del register
-import StepOne from "../components/RegisterSteps/StepOne";
-import StepTwo from "../components/RegisterSteps/StepTwo";
-import StepThree from "../components/RegisterSteps/StepThree";
-import Loading from "../components/Loading/Loading";
-
-// Redux
-import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../redux/actions/appStatusActions";
-import Layout from "../layout/Layout";
-import { useRouter } from "next/router";
+import { setLoading } from "@store/actions/appStatusActions";
 
 const Register = () => {
   // state
@@ -68,7 +69,7 @@ const Register = () => {
       <FormRegisterProvider>
         <Layout>
           {!loading ? (
-            <Screen color={Colors.primary.hexa} extraSize={1}>
+            <Screen color={ColorsHexa.primary} extraSize={1}>
               <h1
                 style={{
                   color: "#fff",

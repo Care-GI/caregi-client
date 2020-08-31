@@ -1,7 +1,8 @@
 import "../styles/Spinner.css";
-import "../styles/Global.css";
 import { Provider } from "react-redux";
-import store from "../redux/store";
+
+import "@styles/Global.css";
+import store from "@store/store";
 
 export default function MyApp({ Component, pageProps }) {
   return (

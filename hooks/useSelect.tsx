@@ -1,5 +1,5 @@
 import React from "react";
-import { Fonts } from "../constants/Fonts";
+import { Fonts } from "@constants/Fonts";
 
 const useModal = (options) => {
   let Component = ({ onChange, name, value }) => (

@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { useRouter } from "next/router";
-
-// Redux Dependencies
 import { useSelector, useDispatch } from "react-redux";
-// actions for app
+import { useRouter } from "next/router";
+import Axios from "axios";
+
 import {
   setLoading,
   showError,
   quitError,
-} from "../redux/actions/appStatusActions";
+} from "@store/actions/appStatusActions";
+import { setActiveStatus, setToken } from "@store/actions/userActions";
 
-// actions user
-import { setActiveStatus, setToken } from "../redux/actions/userActions";
+import Layout from "@layout/Layout";
 
-// componentes
-import { Colors } from "../constants/Colors";
-import FormLogin from "../components/FormLogin/FormLogin";
-import { ScreenPurple } from "../styled-components/screenc/screen";
-import Loading from "../components/Loading/Loading";
-import { proxy } from "../constants/proxy";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import Layout from "../layout/Layout";
+import Loading from "@components/Loading/Loading";
+import ErrorMessage from "@components/ErrorMessage/ErrorMessage";
+import FormLogin from "@components/FormLogin/FormLogin";
+
+import { ScreenPurple } from "@styled-components/screenc/screen";
+
+import { proxy } from "@constants/proxy";
+import { ColorsHexa } from "@constants/Colors";
 
 const Login = () => {
   // Redux
@@ -108,7 +106,7 @@ const Login = () => {
         {loading ? (
           <Loading />
         ) : (
-          <ScreenPurple color={Colors.secondaryDark.rgb}>
+          <ScreenPurple color={ColorsHexa.secondaryDark}>
             <div className="container">
               <div className="col-lg-6 col-md-6 col-sm-12 m-auto">
                 {error.state ? <ErrorMessage>{error.msg}</ErrorMessage> : null}

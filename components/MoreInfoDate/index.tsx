@@ -1,6 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
-const MoreInfoDate = ({ recepy, index, showMore }) => {
+export interface MoreInfoDateProps {
+  recepy: TRecepy;
+}
+
+const MoreInfoDate: React.SFC<MoreInfoDateProps> = ({ recepy }) => {
   return (
     <Fragment>
       <h3>Diagnostico:</h3>

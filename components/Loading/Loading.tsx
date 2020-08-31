@@ -1,7 +1,7 @@
 import React from "react";
 
-import Screen from "../ScreenC/Screen";
-import Spinner from "../Spinner/Spinner";
+import Screen from "@components/ScreenC/Screen";
+import Spinner from "@components/Spinner/Spinner";
 
 const Loading = () => {
   return (

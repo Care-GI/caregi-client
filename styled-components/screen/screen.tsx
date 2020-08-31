@@ -1,11 +1,11 @@
-import { Colors } from "../../constants/Colors";
+import { ColorsHexa } from "@constants/Colors";
 import styled from "@emotion/styled";
 
 export const ScreenPurple = styled.div`
   /* ... */
   width: 100%;
   height: ${840 + 1}px;
-  background-color: ${Colors.primary.hexa};
+  background-color: ${ColorsHexa.primary};
   padding: 2rem;
 
   /* Tableta Mode */
@@ -25,7 +25,7 @@ export const ScreenSecondaryLight = styled.div`
   /* ... */
   width: 100%;
   height: ${840 + 1}px;
-  background-color: ${Colors.secondaryLigth.hexa};
+  background-color: ${ColorsHexa.secondaryLigth};
   padding: 2rem;
 
   /* Tableta Mode */
@@ -45,7 +45,7 @@ export const ScreenSecondaryDark = styled.div`
   /* ... */
   width: 100%;
   height: ${840 + 200}px;
-  background-color: ${Colors.secondaryDark.rgb};
+  background-color: ${ColorsHexa.secondaryDark};
   padding: 2rem;
 
   /* Tableta Mode */

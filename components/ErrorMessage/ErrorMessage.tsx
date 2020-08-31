@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Fonts } from "../../constants/Fonts";
+import { Fonts } from "@constants/Fonts";
 
 const MessageContainer = styled.div`
   /* ... */

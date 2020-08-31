@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from "react";
-import { useSelector } from "react-redux";
-import getStatusAcount from "../lib/getStatusAcount";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+
+import getStatusAcount from "@lib/getStatusAcount";
 
 const useAuth = () => {
   const { userInformation, auth } = useSelector((state) => state.user);

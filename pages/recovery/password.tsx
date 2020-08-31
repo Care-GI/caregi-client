@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import Layout from "../../layout/Layout";
-import { CardPurple } from "../../styled-components/card/card";
-import Title from "../../components/Title/Title";
-import { Colors } from "../../constants/Colors";
-import { ScreenSecondaryLight } from "../../styled-components/screen/screen";
-import IconForm from "../../components/IconForm/IconForm";
+
+import Layout from "@layout/Layout";
+
+import { CardPurple } from "@styled-components/card/card";
+
+import { ScreenSecondaryLight } from "@styled-components/screen/screen";
+import Title from "@components/Title/Title";
+import IconForm from "@components/IconForm/IconForm";
+
+import { ColorsHexa } from "@constants/Colors";
 
 const emailRecovery = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +31,7 @@ const emailRecovery = () => {
           <div style={{ padding: "0rem 5rem" }}>
             <CardPurple className="mt-5">
               <form onSubmit={handleSubmit}>
-                <Title color={Colors.primary.hexa} size={"2rem"}>
+                <Title color={ColorsHexa.primary} size={"2rem"}>
                   <h2>
                     {step === 0
                       ? "Restaurar Password"

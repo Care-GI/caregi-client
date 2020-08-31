@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 
-//Components
-import Screen from "../components/ScreenC/Screen";
+import Screen from "@components/ScreenC/Screen";
+import Card from "@components/Card/Card";
+import IconSlider from "@components/IconSlider/IconSlider";
+import Button from "@components/Button/Button";
+import IconBulb from "@components/IconBulb/IconBulb";
+import Title from "@components/Title/Title";
 
-// Personal Hooks
+import Layout from "@layout/Layout";
 
-//lib
-import { Fonts } from "../constants/Fonts";
-import { Colors } from "../constants/Colors";
-import Card from "../components/Card/Card";
-import IconSlider from "../components/IconSlider/IconSlider";
-import Button from "../components/Button/Button";
-import IconBulb from "../components/IconBulb/IconBulb";
-import Title from "../components/Title/Title";
-import Layout from "../layout/Layout";
-
-// Styled Components
+import { ColorsHexa, ColorsRgb } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
 
 const CardContainer = styled.div`
   /* ... */
@@ -27,23 +22,23 @@ const CardContainer = styled.div`
 const TitleWelcome = styled.h1`
   /* ... */
   margin-top: 1.5rem;
-  color: ${Colors.secondaryDark.rgb};
+  color: ${ColorsHexa.secondaryDark};
   font-size: 3rem;
 
   span {
-    color: ${Colors.secondaryLigth.hexa};
+    color: ${ColorsHexa.secondaryLigth};
     font-size: 3.5rem;
   }
 `;
 
 const SubtitleWelcome = styled.h2`
   /* ... */
-  color: ${Colors.secondaryLigth.hexa};
+  color: ${ColorsHexa.secondaryLigth};
   font-size: 2rem;
 
   span {
     font-size: 2rem;
-    color: ${Colors.secondaryDark.rgb};
+    color: ${ColorsHexa.secondaryDark};
   }
 `;
 
@@ -98,7 +93,7 @@ const TitleHowItWorks = styled.h2`
   font-family: ${Fonts.Title};
   text-align: center;
   margin-top: 5rem;
-  color: ${Colors.primary.hexa};
+  color: ${ColorsHexa.primary};
 `;
 
 const TextInfo = styled.h4`
@@ -125,7 +120,7 @@ const Home = () => {
                 <Card
                   color={{
                     main: "white",
-                    border: Colors.primary.hexa,
+                    border: ColorsHexa.primary,
                   }}
                 >
                   <TitleWelcome>
@@ -139,9 +134,9 @@ const Home = () => {
                     <div>
                       <Button
                         color={{
-                          main: Colors.primary.rgb + ",0.7)",
+                          main: ColorsRgb.primary + ",0.7)",
                           font: "#fff",
-                          hover: Colors.primary.rgb + ",1)",
+                          hover: ColorsRgb.primary + ",1)",
                         }}
                         toLink="/register"
                       >
@@ -152,9 +147,9 @@ const Home = () => {
                       <Button
                         toLink={"/about"}
                         color={{
-                          main: Colors.secondaryLigth.hexa,
+                          main: ColorsHexa.secondaryLigth,
                           font: "#fff",
-                          hover: Colors.secondaryDark.rgb,
+                          hover: ColorsHexa.secondaryDark,
                         }}
                       >
                         Conocenos mas...
@@ -177,7 +172,7 @@ const Home = () => {
           </SlideContainer>
         </Screen>
         {/* Screen de como funciona caregi*/}
-        <Screen color={Colors.secondaryLigth.hexa} extraSize={500}>
+        <Screen color={ColorsHexa.secondaryLigth} extraSize={500}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -189,7 +184,7 @@ const Home = () => {
           <div className="container mt-5">
             <div className="row m-auto">
               <div className="col-lg-6 mt-5">
-                <Title size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={ColorsHexa.primary}>
                   <h2>Crea una Cuenta</h2>
                 </Title>
                 <TextInfo>
@@ -207,7 +202,7 @@ const Home = () => {
               </div>
 
               <div className="col-lg-6 mt-5">
-                <Title size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={ColorsHexa.primary}>
                   <h2>Elige un Doctor Certificado</h2>
                 </Title>
                 <TextInfo>
@@ -223,7 +218,7 @@ const Home = () => {
                 />
               </div>
               <div className="col-lg-6 mt-5">
-                <Title size="3rem" color={Colors.primary.hexa}>
+                <Title size="3rem" color={ColorsHexa.primary}>
                   <h2>Llegamos a tu hogar</h2>
                 </Title>
                 <TextInfo>

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
-
-import { CardPurple } from "../../styled-components/card/card";
-import { Fonts } from "../../constants/Fonts";
-import IconForm from "../../components/IconForm/IconForm";
-import IconBulb from "../../components/IconBulb/IconBulb";
-import { dimension } from "../../constants/Dimensions";
-import { Colors } from "../../constants/Colors";
 import Link from "next/link";
+
+import { CardPurple } from "@styled-components/card/card";
+import IconForm from "@components/IconForm/IconForm";
+import IconBulb from "@components/IconBulb/IconBulb";
+import { ColorsHexa } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
+import { dimension } from "@constants/Dimensions";
 
 const TitleCard = styled.h1`
   /* ... */
@@ -24,7 +24,7 @@ const HelpContainer = styled.div`
 
 const BulbContainer = styled.div`
   /* ... */
-  background-color: ${Colors.primary.hexa};
+  background-color: ${ColorsHexa.primary};
   width: 30%;
   padding: 0.2rem;
   border-radius: 5rem;

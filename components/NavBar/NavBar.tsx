@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import { Fonts } from "../../constants/Fonts";
-import { Colors } from "../../constants/Colors";
+import { Fonts } from "@constants/Fonts";
+import { ColorsHexa } from "@constants/Colors";
+import Link from "next/link";
 
 const ItemsConatiner = styled.div`
   /* ... */
@@ -24,14 +25,12 @@ const ItemsConatiner = styled.div`
   }
 `;
 
-
 export interface INavBarProps {
   items: TNavItem[];
   handleNavBarChange: Function | any;
 }
 
-
-const NavBar: React.SFC<INavBarProps> = ({ items, handleNavBarChange  }) => {
+const NavBar: React.SFC<INavBarProps> = ({ items, handleNavBarChange }) => {
   const handleClick = (item) => {
     items.map((item) => {
       if (item.current) {
@@ -70,16 +69,17 @@ const NavBar: React.SFC<INavBarProps> = ({ items, handleNavBarChange  }) => {
         <ul>
           {items.map((item) => (
             <li key={item.title}>
-              <a
-                href={item.toLink}
-                style={{
-                  color: item.current ? Colors.secondaryLigth.hexa : "#fff",
-                  textDecoration: "none",
-                }}
-                onClick={() => handleClick(item)}
-              >
-                {item.title}
-              </a>
+              <Link href={item.toLink}>
+                <a
+                  style={{
+                    color: item.current ? ColorsHexa.secondaryLigth : "#fff",
+                    textDecoration: "none",
+                  }}
+                  onClick={() => handleClick(item)}
+                >
+                  {item.title}
+                </a>
+              </Link>
             </li>
           ))}
         </ul>

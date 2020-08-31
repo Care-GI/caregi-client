@@ -1,7 +1,8 @@
 import React from "react";
-import styled from "@emotion/styled";
-import navPrincipalItems from "../../lib/navPrincipalItems";
 import Link from "next/link";
+
+import styled from "@emotion/styled";
+import navPrincipalItems from "@lib/navPrincipalItems";
 
 const MainLogo = styled.img`
   width: 8%;

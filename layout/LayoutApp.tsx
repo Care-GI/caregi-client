@@ -2,9 +2,10 @@
 import React from "react";
 import _useAuth from "../hooks/useAuth";
 import { Helmet } from "react-helmet";
-import Header from "../components/Header/Header";
-import NavBarApp from "./NavBarApp";
-import ActiveAuth from "../hooks/useActive";
+
+import Header from "@components/Header/Header";
+import NavBarApp from "@layout/NavBarApp";
+import ActiveAuth from "@hooks/useActive";
 
 const Main = (props) => {
   const [SecureAuth] = _useAuth();
@@ -13,14 +14,13 @@ const Main = (props) => {
     <SecureAuth>
       <Helmet title="Care App 💜">
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
           content="Web site created using create-react-app"
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="icon" href="favicon.ico" />
         {/*!----BOOTSTRAP--> */}
         <link
           href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/pulse/bootstrap.min.css"

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export const FormRegisterContext = createContext();
+export const FormRegisterContext = createContext(undefined);
 
 const FormRegisterProvider = (props) => {
   // estado del context

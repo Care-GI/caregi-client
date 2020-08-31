@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
-import Link from "next/link";
-import styled from "@emotion/styled";
-import { Colors } from "../constants/Colors";
-import { Fonts } from "../constants/Fonts";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { useSelector } from "react-redux";
-import { dimension } from "../constants/Dimensions";
+import styled from "@emotion/styled";
+
+import { ColorsHexa } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
+import { dimension } from "@constants/Dimensions";
 
 const NavContainer = styled.div`
   /* ... */
@@ -13,7 +14,7 @@ const NavContainer = styled.div`
   text-align: center;
   padding-bottom: 1.4rem;
   padding-top: 1.4rem;
-  background-color: ${Colors.secondaryLigth.hexa};
+  background-color: ${ColorsHexa.secondaryLigth};
 
   .icon {
     color: white;
@@ -24,7 +25,7 @@ const NavContainer = styled.div`
 
     :hover {
       background-color: white;
-      color: ${Colors.secondaryLigth.hexa};
+      color: ${ColorsHexa.secondaryLigth};
       padding: 2rem;
       border-radius: 1.5rem;
     }
@@ -47,7 +48,7 @@ const NavBarApp = () => {
   };
 
   const UpContainer = styled.div`
-    background-color: ${Colors.primary.hexa};
+    background-color: ${ColorsHexa.primary};
     padding: 1.2rem;
     color: white;
     display: flex;
@@ -71,14 +72,14 @@ const NavBarApp = () => {
     }
 
     ul {
-      background-color: ${Colors.secondaryLigth.hexa};
+      background-color: ${ColorsHexa.secondaryLigth};
       border-radius: 2rem;
     }
 
     .hidden {
       display: ${show};
       text-decoration: none;
-      color: ${Colors.primary.hexa};
+      color: ${ColorsHexa.primary};
       :hover {
         color: white;
         font-size: 1.4rem;
@@ -99,7 +100,7 @@ const NavBarApp = () => {
     }
 
     .carrito-compras {
-      color: ${Colors.secondaryLigth.rgb};
+      color: ${ColorsHexa.secondaryLigth};
       :hover {
         transform: scale(1.4);
       }
@@ -107,7 +108,7 @@ const NavBarApp = () => {
 
     @media (max-width: ${dimension.tablet}) {
       ul {
-        background-color: ${Colors.secondaryLigth.hexa};
+        background-color: ${ColorsHexa.secondaryLigth};
         border-radius: 1.3rem;
       }
       .half {
@@ -117,7 +118,7 @@ const NavBarApp = () => {
 
     @media (max-width: ${dimension.mobileLarge}) {
       ul {
-        background-color: ${Colors.secondaryLigth.hexa};
+        background-color: ${ColorsHexa.secondaryLigth};
         border-radius: 1.3rem;
       }
       .half {
@@ -140,7 +141,7 @@ const NavBarApp = () => {
               >
                 <li>
                   <div className="menu-main">
-                    <p className="opener">Alejandro</p>
+                    <p className="opener">{name}</p>
                     <i className="fas fa-angle-double-down"></i>
                   </div>
                 </li>

@@ -3,7 +3,7 @@ import Axios from "axios";
 
 import { proxy } from "../constants/proxy";
 
-export const StatusAcountContext = createContext();
+export const StatusAcountContext = createContext(undefined);
 
 const StatusAcountProvider = (props) => {
   const [acountActive, setAcountActive] = useState(true);

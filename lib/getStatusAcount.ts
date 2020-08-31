@@ -5,7 +5,7 @@ import {
   setBasicInfo,
   setStatusInf,
   setActiveStatus,
-} from "../redux/actions/userActions";
+} from "../store/actions/userActions";
 
 const getStatusAcount = async (token, router, dispatch) => {
   try {

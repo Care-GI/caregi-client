@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { Colors } from "../constants/Colors";
+import { ColorsHexa } from "../constants/Colors";
 
 const IconClose = styled.div`
   /* ... */
@@ -32,7 +32,7 @@ const useModal = (init) => {
           borderRadius: "2rem",
           borderWidth: "1rem",
           borderStyle: "groove",
-          borderColor: Colors.secondaryLigth.hexa,
+          borderColor: ColorsHexa.secondaryLigth,
         }}
       >
         <IconClose>

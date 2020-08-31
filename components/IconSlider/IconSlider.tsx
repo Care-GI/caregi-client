@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Fonts } from "../../constants/Fonts";
-import { Colors } from "../../constants/Colors";
+
+import { Fonts } from "@constants/Fonts";
+import { ColorsRgb } from "@constants/Colors";
 
 const ContainerIconSlide = styled.div`
   /* ... */
@@ -17,13 +18,13 @@ const ContainerIconSlide = styled.div`
 
 
   @keyframes sliderAnim {
-    0% {color: ${Colors.primary.rgb},0.3)}
-    25% {color: ${Colors.primary.rgb},0.5)}
-    30% {color: ${Colors.primary.rgb},1)}
-    50% {color: ${Colors.primary.rgb},1)}
-    60% {color: ${Colors.primary.rgb},1)}
-    75% {color: ${Colors.primary.rgb},0.5)}
-    100% {color: ${Colors.primary.rgb},0.3)}
+    0%  {color: ${ColorsRgb.primary}+",0.3)"}
+    25% {color: ${ColorsRgb.primary}+",0.5)"}
+    30% {color: ${ColorsRgb.primary}+",1)"}
+    50% {color: ${ColorsRgb.primary}+",1)"}
+    60% {color: ${ColorsRgb.primary}+",1)"}
+    75% {color: ${ColorsRgb.primary}+",0.5)"}
+    100% {color: ${ColorsRgb.primary}+",0.3)"}
   }
 `;
 

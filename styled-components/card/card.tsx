@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { Colors } from "../../constants/Colors";
-import { Fonts } from "../../constants/Fonts";
+import { ColorsHexa } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
 
 export const CardPurple = styled.div`
   background-color: white;
@@ -8,12 +8,12 @@ export const CardPurple = styled.div`
   border-radius: 2rem;
   border-width: 1rem;
   border-style: groove;
-  border-color: ${Colors.primary.hexa};
+  border-color: ${ColorsHexa.primary};
   text-align: center;
 
   h3 {
     font-family: ${Fonts.Title};
-    color: ${Colors.primary.hexa};
+    color: ${ColorsHexa.primary};
   }
 
   .link,
@@ -29,7 +29,7 @@ export const CardPurple = styled.div`
   }
 
   .link {
-    color: ${Colors.primary.hexa};
+    color: ${ColorsHexa.primary};
     font-family: ${Fonts.Title};
     letter-spacing: 2px;
   }
@@ -41,7 +41,7 @@ export const CardBlueMedium = styled.div`
   border-radius: 2rem;
   border-width: 1rem;
   border-style: groove;
-  border-color: ${Colors.secondaryDark.rgb};
+  border-color: ${ColorsHexa.secondaryDark};
   text-align: center;
   width: 50%;
 `;

@@ -1,6 +1,6 @@
 // funcionalidad de autenticacion y el index router
 import React from "react";
-import LayoutApp from "../../layout/LayoutApp";
+import LayoutApp from "@layout/LayoutApp";
 
 const profile = () => {
   return (

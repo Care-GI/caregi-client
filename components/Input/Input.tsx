@@ -1,5 +1,5 @@
 import React from "react";
-import { Fonts } from "../../constants/Fonts";
+import { Fonts } from "@constants/Fonts";
 
 export interface InputProps {
   name: string;

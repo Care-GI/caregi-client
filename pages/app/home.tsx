@@ -1,17 +1,18 @@
 // funcionalidad de autenticacion y el index router
 import React from "react";
-import _useAuth from "../../hooks/useAuth";
-import LayoutApp from "../../layout/LayoutApp";
+import styled from "@emotion/styled";
+import Link from "next/link";
+
+import _useAuth from "@hooks/useAuth";
+import LayoutApp from "@layout/LayoutApp";
 import {
   ScreenPurple,
   ScreenSecondaryDark,
-} from "../../styled-components/screen/screen";
-import Title from "../../components/Title/Title";
-import Button from "../../components/Button/Button";
-import styled from "@emotion/styled";
-import { Colors } from "../../constants/Colors";
-import Dates from "../../components/Dates";
-import Link from "next/link";
+} from "@styled-components/screen/screen";
+import Title from "@components/Title/Title";
+import Button from "@components/Button/Button";
+import Dates from "@components/Dates";
+import { ColorsHexa } from "@constants/Colors";
 
 const Main = () => {
   console.log("recargando");
@@ -51,8 +52,8 @@ const Main = () => {
         <ButtonWrapper>
           <Button
             color={{
-              hover: Colors.secondaryLigth.hexa,
-              main: Colors.secondaryDark.rgb,
+              hover: ColorsHexa.secondaryLigth,
+              main: ColorsHexa.secondaryDark,
               font: "white",
             }}
             toLink="/"

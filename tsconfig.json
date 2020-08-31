@@ -1,11 +1,20 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@public/*": ["public/*"],
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"],
+      "@layout/*": ["layout/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styled-components/*": ["styled-components/*"],
+      "@styles/*": ["styles/*"],
+      "@store/*": ["store/*"],
+      "@config/*": ["config/*"],
+      "@constants/*": ["constants/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -18,12 +27,11 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "context/FormRegisterContext.tsx"
   ]
 }

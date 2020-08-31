@@ -1,12 +1,13 @@
 import React, { useState, Fragment } from "react";
 import { CardPurple } from "../../styled-components/card/card";
 import moment from "moment";
-import Title from "../Title/Title";
-import MoreInfoDate from "../MoreInfoDate";
-import { Colors } from "../../constants/Colors";
-import ButtonSmall from "../Button/ButtonSmall";
 import styled from "@emotion/styled";
 import Link from "next/link";
+
+import Title from "@components/Title/Title";
+import MoreInfoDate from "@components/MoreInfoDate";
+import ButtonSmall from "@components/Button/ButtonSmall";
+import { ColorsHexa } from "@constants/Colors";
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -17,7 +18,8 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const exampleDates = [
+//! Replace this with the real fetch dates
+const exampleDates: TDate[] = [
   {
     _id: "1",
     clientName: "Alejandro Andrade",
@@ -31,14 +33,17 @@ const exampleDates = [
         {
           nameMedicine: "Clorfenamina",
           timesPerDay: "Cada 8 Horas",
+          daysToTake: 2,
         },
         {
           nameMedicine: "Iboprufeon",
           timesPerDay: "Cada 12 Horas",
+          daysToTake: 2,
         },
         {
           nameMedicine: "Dualgos",
           timesPerDay: "Cada que tenga fiebre",
+          daysToTake: 2,
         },
       ],
       prescription: {
@@ -50,7 +55,7 @@ const exampleDates = [
         description:
           "Se reconocen sintomas de gripa para lo que se ocupan un cuidado intensivo y tomar sus medicinas para una mejora",
       },
-      endTreatment: moment().add(1, "weeks"),
+      endTreatment: `${moment().add(1, "weeks")}`,
     },
   },
   {
@@ -66,14 +71,17 @@ const exampleDates = [
         {
           nameMedicine: "Clorfenamina",
           timesPerDay: "Cada 8 Horas",
+          daysToTake: 2,
         },
         {
           nameMedicine: "Iboprufeon",
           timesPerDay: "Cada 12 Horas",
+          daysToTake: 2,
         },
         {
           nameMedicine: "Dualgos",
           timesPerDay: "Cada que tenga fiebre",
+          daysToTake: 2,
         },
       ],
       prescription: {
@@ -85,7 +93,7 @@ const exampleDates = [
         description:
           "Se reconocen sintomas de gripa para lo que se ocupan un cuidado intensivo y tomar sus medicinas para una mejora",
       },
-      endTreatment: moment().add(1, "weeks"),
+      endTreatment: `${moment().add(1, "weeks")}`,
     },
   },
 ];
@@ -120,11 +128,7 @@ const Dates = () => {
               <p>{item.date}</p>
               {showMore.state && showMore.position === i ? (
                 <Fragment>
-                  <MoreInfoDate
-                    recepy={item.recepy}
-                    showMore={showMore}
-                    index={i + 1}
-                  />
+                  <MoreInfoDate recepy={item.recepy} />
                   <Link href="/app/recepy/[id]" as={`/app/recepy/${item._id}`}>
                     <a className="link">Ver Receta</a>
                   </Link>
@@ -132,7 +136,7 @@ const Dates = () => {
               ) : null}
               <ButtonContainer>
                 <ButtonSmall
-                  color={{ font: "white", main: Colors.primary.hexa }}
+                  color={{ font: "white", main: ColorsHexa.primary }}
                   clickfunc={() =>
                     setShowmore({
                       state: !showMore.state,
@@ -147,8 +151,8 @@ const Dates = () => {
                 <ButtonSmall
                   color={{
                     font: "white",
-                    main: Colors.secondaryDark.rgb,
-                    hover: Colors.secondaryLigth.hexa,
+                    main: ColorsHexa.secondaryDark,
+                    hover: ColorsHexa.secondaryLigth,
                   }}
                   clickfunc={() =>
                     alert("Seguro vas a eliminar permanentemente")

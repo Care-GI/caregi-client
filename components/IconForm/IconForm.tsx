@@ -1,6 +1,6 @@
 import React from "react";
-import { Colors } from "../../constants/Colors";
-import { Fonts } from "../../constants/Fonts";
+import { ColorsHexa } from "@constants/Colors";
+import { Fonts } from "@constants/Fonts";
 
 export interface IconFormProps {
   iconClass: string;
@@ -28,7 +28,7 @@ const IconForm: React.SFC<IconFormProps> = ({
         <div className="input-group-prepend">
           <div
             className="input-group-text"
-            style={{ backgroundColor: Colors.primary.hexa }}
+            style={{ backgroundColor: ColorsHexa.primary }}
           >
             <i className={iconClass} style={{ color: "#fff" }}></i>
           </div>

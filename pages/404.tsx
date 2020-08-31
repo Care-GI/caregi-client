@@ -1,7 +1,9 @@
 import React from "react";
-import Layout from "../layout/Layout";
+
+import Layout from "@layout/Layout";
 import styled from "@emotion/styled";
-import { dimension } from "../constants/Dimensions";
+import { dimension } from "@constants/Dimensions";
+
 const error = () => {
   const ImageCenter = styled.div`
     display: flex;

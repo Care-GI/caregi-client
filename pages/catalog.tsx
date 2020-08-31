@@ -1,12 +1,10 @@
-import React, { useEffect, Fragment } from "react";
-import Layout from "../layout/Layout";
-import Axios from "axios";
-import { proxy } from "../constants/proxy";
+import React from "react";
+import Layout from "@layout/Layout";
 
 // components
 import { ScreenPurple } from "../styled-components/screenc/screen";
 import styled from "@emotion/styled";
-import { Colors } from "../constants/Colors";
+import { ColorsHexa } from "../constants/Colors";
 
 const NavSearchContainer = styled.div`
   justify-content: center;
@@ -17,7 +15,7 @@ const NavSearchContainer = styled.div`
   border-radius: 2rem;
   border-width: 1rem;
   border-style: groove;
-  border-color: ${Colors.secondaryDark.rgb};
+  border-color: ${ColorsHexa.secondaryDark};
   width: 25%;
   padding: 1rem 1rem;
   margin: 4rem 0;

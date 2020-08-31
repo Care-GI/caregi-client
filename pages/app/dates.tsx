@@ -1,7 +1,7 @@
 // funcionalidad de autenticacion y el index router
 import React from "react";
-import _useAuth from "../../hooks/useAuth";
-import LayoutApp from "../../layout/LayoutApp";
+import _useAuth from "@hooks/useAuth";
+import LayoutApp from "@layout/LayoutApp";
 
 const dates = () => {
   return (

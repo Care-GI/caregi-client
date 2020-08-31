@@ -1,10 +1,13 @@
 import React from "react";
-import Layout from "../layout/Layout";
-import { ScreenPurple as Screen } from "../styled-components/screenc/screen";
-import { Fonts } from "../constants/Fonts";
-import styled from "@emotion/styled";
-import { CardBlueMedium } from "../styled-components/card/card";
 import Link from "next/link";
+import styled from "@emotion/styled";
+
+import Layout from "@layout/Layout";
+
+import { ScreenPurple as Screen } from "@styled-components/screenc/screen";
+import { CardBlueMedium } from "@styled-components/card/card";
+
+import { Fonts } from "@constants/Fonts";
 
 const about = () => {
   const FirstZoneContainer = styled.div`
